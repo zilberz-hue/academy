@@ -1,0 +1,22 @@
+# the site is plain static files — nothing to compile at deploy time.
+# PDFs and index.html are generated locally (npm run build) and committed.
+
+[build]
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/pdf/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    Content-Disposition = "inline"
+
+[[redirects]]
+  from = "/courses"
+  to = "/"
+  status = 301
