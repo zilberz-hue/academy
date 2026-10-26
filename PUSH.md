@@ -1,53 +1,65 @@
 # להעלות את הריפו ל-GitHub
 
-הריפו כבר מאותחל, עם branch `main` ושני קומיטים. נשאר רק להצמיד אותו ל-GitHub.
+הריפו כאן שלם: 11 קורסים, 11 PDF, מערכת העיצוב, הסקריפטים וה-GitHub Action.
+38 קבצים, 9 קומיטים, עובר את שער האיכות.
 
-## 1. ליצור ריפו ריק
+`github.com/zilberz-hue/academy` כבר קיים ומחובר ל-Netlify, אבל יש בו רק
+קבצי שורש — תיקיות `courses/`, `assets/`, `pdf/` ו-`scripts/` לא עלו בגרירה.
+לכן דף הבית מציג 11 קורסים וכל הקישורים מחזירים 404.
 
-פתח: https://github.com/new?name=academy
+הפקודה למטה מחליפה את מה שבריפו במה שכאן, ומסדרת את זה בפעם אחת.
 
-- **Owner**: zilberz-hue
-- **Repository name**: academy
-- **Private** (מומלץ — אפשר לפתוח אחר כך)
-- אל תסמן "Add a README", "Add .gitignore" או "Choose a license" — הריפו כבר מכיל אותם,
-  וסימון ייצור קונפליקט בדחיפה הראשונה.
-
-## 2. לדחוף
+## הדרך הקצרה — טרמינל
 
 ```bash
-cd academy
-git remote add origin https://github.com/zilberz-hue/academy.git
-git push -u origin main
+unzip academy.zip
+cd repo
+git push --force origin main
 ```
 
-אם SSH מוגדר אצלך, השורה האמצעית היא:
+זה הכול. ה-remote כבר מוגדר ל-`https://github.com/zilberz-hue/academy.git`,
+אין מה להוסיף ואין מה לקנפג.
 
-```bash
-git remote add origin git@github.com:zilberz-hue/academy.git
-```
+`--force` נדרש כי ההיסטוריות נפרדו: בריפו יש 3 קומיטים של העלאות ידניות, וכאן 9.
+לא מאבדים שום דבר — כל מה שהעלית ידנית קיים כאן בגרסה מעודכנת יותר.
 
-## 3. לחבר ל-Netlify
+אם git מבקש הזדהות, שם המשתמש הוא `zilberz-hue` והסיסמה היא **Personal Access Token**
+(לא סיסמת החשבון): `github.com/settings/tokens` → Generate new token (classic) → הרשאת `repo`.
 
-Netlify → Add new site → Import an existing project → GitHub → `academy`.
+## בלי טרמינל — GitHub Desktop
 
-| שדה | ערך |
-|---|---|
-| Branch to deploy | `main` |
-| Build command | *(ריק)* |
-| Publish directory | `.` |
+1. להתקין: `desktop.github.com`
+2. להיכנס עם חשבון `zilberz-hue`
+3. `File → Add local repository` ולבחור את תיקיית `repo` שפרקת מה-zip
+4. ללחוץ `Push origin`. אם הוא מתלונן על היסטוריה שונה — `Repository → Repository settings`
+   ואז force push, או פשוט להריץ את הפקודה מהסעיף הקודם מתוך `Repository → Open in Terminal`
 
-`netlify.toml` שבריפו כבר מגדיר את זה, אז אפשר פשוט ללחוץ Deploy.
+## אחרי הדחיפה — פעם אחת בלבד
 
-## 4. מכאן זה אוטומטי
+ב-GitHub: `Settings → Actions → General → Workflow permissions` → **Read and write permissions** → Save.
 
-אחרי שני השלבים האלה אין יותר עבודה ידנית:
+בלי זה ה-Action ירוץ אבל לא יוכל לקמט חזרה את `index.html` ואת `pdf/`.
+
+## ומכאן זה אוטומטי
 
 ```
 git push  →  GitHub Action  →  index + PDF + שער איכות  →  קומיט  →  Netlify
 ```
 
-כל דחיפה שמשנה תוכן קורס מרעננת את דף הבית ואת כל קבצי ה-PDF, עוברת שער
-שבודק את עשרת הקורסים בדפדפן, ורק אז עולה לאוויר. אם משהו שבור — הבנייה
-נופלת והאתר נשאר על הגרסה הקודמת.
+כל דחיפה שנוגעת ב-`courses/`, `assets/`, `courses.json` או `scripts/`:
 
-להרצת השער מקומית: `npm run check`
+1. מרעננת את `index.html` מ-`courses.json`
+2. בונה קובץ עצמאי לכל קורס עם הגופנים מוטמעים
+3. מרנדרת מחדש את כל 11 ה-PDF
+4. **מריצה את שער האיכות** — אפס שגיאות JS, רקע קלף, גופן Assistant, בדיוק אינדקס
+   אחד גלוי, hero עם לוגו, מספר יחידות תואם, אין גלילה אופקית, כל קישור בדף הבית תקין
+5. מקמטת את התוצרים עם `[skip ci]`
+
+אם משהו שבור — הבנייה נופלת, הקומיט לא נכנס, והאתר נשאר על הגרסה הקודמת.
+
+להרצת השער מקומית, לפני דחיפה: `npm run check`
+
+## לעדכן תוכן מכאן והלאה
+
+לערוך את הקובץ ב-`courses/`, לדחוף, וזהו. לא להריץ build ולא לייצר PDF ביד —
+ה-Action עושה את זה. עיצוב שמשותף לכל הקורסים נמצא ב-`assets/tizon.css` ורק שם.
