@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>סינדרומים ברפואה הסינית — Tizon Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;900&family=Assistant:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/tizon.css">
+<style id="tizon-course">
+*{box-sizing:border-box}
+body{margin:0;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,textarea{-webkit-user-select:text;user-select:text}
+html{scroll-behavior:smooth}
+
+/* ---- shell: sidebar + main ---- */
+.shell{display:flex;min-height:100vh}
+.sidebar{width:290px;flex:0 0 290px;background:var(--tz-card);border-left:1px solid var(--tz-line);
+  position:sticky;top:0;height:100vh;overflow-y:auto;padding:22px 16px 30px}
+.brand{text-align:center;padding:4px 0 2px}
+.brand img{width:118px;height:auto;display:block;margin:0 auto}
+.b-sub{text-align:center;font-size:13px;color:var(--tz-ink-mute);margin:6px 0 18px}
+.side-title{font-family:var(--tz-serif);font-weight:700;font-size:15px;color:var(--tz-bronze-deep);
+  letter-spacing:.04em;padding:0 8px 8px;border-bottom:1px solid var(--tz-line-soft);margin-bottom:8px}
+.nav-btn{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:start;background:none;border:0;
+  padding:8px 9px;border-radius:12px;cursor:pointer;color:var(--tz-ink-soft);font-family:var(--tz-sans);font-size:15.5px;line-height:1.35;transition:background .15s}
+.nav-btn:hover{background:var(--tz-parchment-2);color:var(--tz-ink)}
+.nav-btn .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--tz-parchment-2);color:var(--tz-bronze-deep);
+  display:grid;place-items:center;font-family:var(--tz-mono);font-size:12px;font-weight:500}
+.nav-btn .nl{padding-top:2px}
+.nav-btn.active{background:linear-gradient(95deg,var(--tz-leaf-deep),var(--tz-leaf));color:#fff;box-shadow:var(--tz-sh)}
+.nav-btn.active .num{background:rgba(255,255,255,.25);color:#fff}
+.main{flex:1;min-width:0}
+.mobile-bar{display:none}
+
+/* ---- hero ---- */
+.tz-hero{padding:58px 32px 52px;text-align:center;overflow:hidden}
+.tz-hero .bg-zh{position:absolute;inset:auto auto -60px -10px;font-size:240px;line-height:1;font-family:serif;
+  color:rgba(203,168,119,.08) !important;pointer-events:none;user-select:none}
+.hero-inner{position:relative;max-width:760px;margin:0 auto}
+.tz-hero .lead{font-size:19px;margin:14px auto 0;max-width:640px;line-height:1.7}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+.hero-meta .chip{padding:5px 14px;font-size:14px}
+
+/* ---- lessons ---- */
+.wrap{max-width:var(--tz-read);margin:0 auto;padding:0 28px 90px}
+.lesson{display:none;padding-top:44px;animation:fade .35s ease}
+.lesson.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.lesson-head{border-bottom:2px solid var(--tz-line);padding-bottom:16px;margin-bottom:26px}
+.lesson-head .kicker{font-family:var(--tz-sans);font-size:12.5px;font-weight:600;letter-spacing:.18em;color:var(--tz-bronze-deep)}
+.lesson-head h2{font-size:clamp(27px,4vw,38px);margin:6px 0 0}
+.cn{font-family:var(--tz-sans);font-size:.48em;font-weight:500;color:var(--tz-ink-mute);letter-spacing:.02em;white-space:nowrap}
+.lesson p{margin:0 0 15px;color:var(--tz-ink-soft)}
+.lesson .lead{font-family:var(--tz-serif);font-size:21px;line-height:1.65;color:var(--tz-leaf-dark);
+  border-right:4px solid var(--tz-bronze);padding:2px 18px 2px 0;margin:0 0 28px}
+.lesson h3{font-size:23px;margin:36px 0 14px;padding-right:13px;border-right:4px solid var(--tz-leaf)}
+.lesson ul{margin:0 0 18px;padding-right:22px;color:var(--tz-ink-soft)}
+.lesson li{margin-bottom:7px}
+.lesson table{margin:6px 0 22px;font-size:15px}
+.lesson th,.lesson td{padding:9px 12px;text-align:start;vertical-align:top;border-bottom:1px solid var(--tz-line)}
+.table-scroll{overflow-x:auto}
+.box{background:var(--tz-leaf-tint);border:1px solid var(--tz-line);border-right:5px solid var(--tz-leaf);
+  border-radius:var(--tz-r);padding:14px 18px;margin:18px 0;color:var(--tz-ink-soft);font-size:16px}
+.box.warn{background:var(--tz-bronze-tint);border-right-color:var(--tz-bronze)}
+.box-t{font-family:var(--tz-serif);font-weight:700;color:var(--tz-ink);margin-bottom:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two .box{margin:6px 0}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:10px 0 16px}
+.flow span{background:var(--tz-card);border:1px solid var(--tz-line-strong);border-radius:var(--tz-r-pill);padding:4px 14px;font-size:15px;color:var(--tz-ink)}
+.flow i{font-style:normal;color:var(--tz-bronze);font-weight:700}
+.kdot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--tz-leaf);vertical-align:middle}
+.redtag{display:inline-block;background:var(--tz-accent-soft);color:var(--tz-accent-deep);border:1px solid #e5c3b7;
+  border-radius:var(--tz-r-pill);font-size:12.5px;font-weight:700;padding:1px 10px;vertical-align:1px}
+
+/* ---- jump list ---- */
+.jump{display:flex;flex-wrap:wrap;gap:6px;margin:26px 0 0;padding:14px 16px;background:var(--tz-card);border:1px solid var(--tz-line);border-radius:var(--tz-r)}
+.jump .lbl{width:100%;font-size:12.5px;font-weight:600;letter-spacing:.14em;color:var(--tz-bronze-deep);margin-bottom:2px}
+.jump a{font-size:14.5px;text-decoration:none;color:var(--tz-leaf-dark);background:var(--tz-leaf-tint);border:1px solid #dfe8c6;border-radius:var(--tz-r-pill);padding:3px 12px}
+.jump a:hover{background:var(--tz-leaf-soft)}
+
+/* ---- syndrome card ---- */
+.syns{display:grid;gap:22px}
+.syn{background:var(--tz-card);border:1px solid var(--tz-line);border-radius:var(--tz-r-lg);box-shadow:var(--tz-sh);overflow:hidden;scroll-margin-top:16px}
+.syn-h{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:16px 22px 14px;
+  background:linear-gradient(180deg,var(--tz-card-2),var(--tz-card));border-bottom:1px solid var(--tz-line-soft);border-top:4px solid var(--tz-leaf)}
+.syn.red .syn-h{border-top-color:var(--tz-accent)}
+.syn-h h4{margin:0;font-size:22px;font-weight:700;color:var(--tz-ink)}
+.syn-py{font-family:var(--tz-mono);font-size:12.5px;color:var(--tz-bronze-deep);margin-top:2px;letter-spacing:.02em}
+.syn-zh{font-size:28px;color:var(--tz-bronze);font-family:'Noto Serif SC','Songti SC',serif;white-space:nowrap;opacity:.85}
+.redline{padding:7px 22px;background:var(--tz-accent-tint);font-size:14px;color:var(--tz-accent-deep);border-bottom:1px solid #efd6cc}
+.syn-body{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border-bottom:1px solid var(--tz-line-soft)}
+.signs{padding:16px 22px}
+.lbl{font-family:var(--tz-sans);font-size:11.5px;font-weight:700;letter-spacing:.16em;color:var(--tz-bronze-deep);margin-bottom:6px}
+.signs ul{margin:0;padding:0;list-style:none;columns:1}
+.signs li{position:relative;padding-right:16px;margin:0 0 5px;font-size:15.5px;line-height:1.5;color:var(--tz-ink-soft)}
+.signs li::before{content:'';position:absolute;right:2px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--tz-line-strong)}
+.signs li.key{color:var(--tz-ink);font-weight:600}
+.signs li.key::before{width:8px;height:8px;right:0;top:.5em;background:var(--tz-leaf)}
+.signs li.more{font-style:normal}
+.tp-grid{display:grid;grid-template-rows:1fr 1fr;border-right:1px solid var(--tz-line-soft);background:var(--tz-card-2)}
+.tp-cell{padding:14px 18px;font-size:15.5px;color:var(--tz-ink);line-height:1.5}
+.tp-cell + .tp-cell{border-top:1px solid var(--tz-line-soft)}
+.syn-dl{margin:0;padding:14px 22px 6px;display:grid;grid-template-columns:110px 1fr;gap:8px 16px}
+.syn-dl dt{font-family:var(--tz-sans);font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--tz-bronze-deep);padding-top:3px}
+.syn-dl dd{margin:0;font-size:15.5px;line-height:1.65;color:var(--tz-ink-soft)}
+.syn-dl dd.tp-line{color:var(--tz-leaf-dark);font-weight:600}
+.syn-dl dd.cf{font-family:var(--tz-mono);font-size:13.5px;color:var(--tz-ink-soft)}
+.pts{display:flex;flex-wrap:wrap;gap:6px}
+.pt{font-family:var(--tz-sans);font-size:13.5px;background:var(--tz-parchment);border:1px solid var(--tz-line-strong);
+  border-radius:var(--tz-r-xs);padding:2px 9px;cursor:pointer;color:var(--tz-ink-soft);line-height:1.6}
+.pt b{font-family:var(--tz-mono);font-weight:500;color:var(--tz-leaf-dark);font-size:12.5px}
+.pt:hover{border-color:var(--tz-leaf);background:var(--tz-leaf-tint)}
+.tz-slot{margin:8px 22px 14px;padding:9px 14px;border:1.5px dashed var(--tz-line-strong);border-radius:var(--tz-r-sm);
+  display:flex;gap:14px;align-items:center;font-size:15px;color:var(--tz-ink)}
+.tz-slot .lbl{margin:0}
+.tz-slot.ok{border-style:solid;border-color:var(--tz-leaf);background:var(--tz-leaf-tint);font-weight:600}
+.pend{color:var(--tz-ink-mute);font-size:14px}
+.pearl{margin:0 22px 18px;padding:10px 14px;background:var(--tz-bronze-tint);border-right:3px solid var(--tz-bronze);
+  border-radius:var(--tz-r-xs);font-size:15px;color:var(--tz-ink-soft)}
+.pearl.warn{background:var(--tz-accent-tint);border-right-color:var(--tz-accent);color:var(--tz-accent-deep)}
+
+.ptpop{position:absolute;z-index:200;display:none;max-width:300px;background:var(--tz-ink);color:var(--tz-on-dark);
+  border-radius:var(--tz-r);padding:11px 14px;font-size:14px;line-height:1.55;box-shadow:var(--tz-sh-lg)}
+.ptpop .pp-h{font-family:var(--tz-mono);color:var(--tz-bronze-light);margin-bottom:3px}
+.ptpop .pp-h b{color:#fff}
+.ptpop .pp-u{margin-top:6px;font-size:12.5px;color:var(--tz-on-dark-soft)}
+
+.lesson-foot{display:flex;justify-content:space-between;gap:12px;margin-top:44px;padding-top:20px;border-top:1px solid var(--tz-line)}
+.lf{background:var(--tz-card);border:1px solid var(--tz-line-strong);border-radius:var(--tz-r-pill);padding:8px 18px;
+  font-family:var(--tz-sans);font-size:15px;color:var(--tz-leaf-dark);cursor:pointer}
+.lf:hover{background:var(--tz-leaf-tint);border-color:var(--tz-leaf)}
+.lf.next{background:var(--tz-leaf-deep);color:#fff;border-color:var(--tz-leaf-dark)}
+.lf.next:hover{background:var(--tz-leaf-dark)}
+
+/* ---- calculator ---- */
+.calc{display:grid;grid-template-columns:1fr 290px;gap:22px;align-items:start}
+.calc-bar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap}
+.seg{display:inline-flex;background:var(--tz-parchment-2);border-radius:var(--tz-r-pill);padding:3px}
+.seg button{border:0;background:none;padding:6px 14px;border-radius:var(--tz-r-pill);font-size:14px;color:var(--tz-ink-soft);cursor:pointer}
+.seg button.on{background:var(--tz-card);color:var(--tz-leaf-dark);font-weight:700;box-shadow:var(--tz-sh-sm)}
+.clr{background:none;border:1px solid var(--tz-line-strong);border-radius:var(--tz-r-pill);padding:5px 14px;font-size:14px;cursor:pointer;color:var(--tz-ink-soft)}
+.calc-find{width:100%;padding:9px 14px;border:1px solid var(--tz-line-strong);border-radius:var(--tz-r);background:var(--tz-card);font-size:15px;margin-bottom:12px}
+.fg{border:1px solid var(--tz-line);border-radius:var(--tz-r);padding:10px 14px 12px;margin:0 0 12px;background:var(--tz-card)}
+.fg legend{font-family:var(--tz-serif);font-weight:700;font-size:15.5px;padding:0 6px;color:var(--tz-ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip-f{border:1px solid var(--tz-line-strong);background:var(--tz-parchment);border-radius:var(--tz-r-pill);
+  padding:4px 12px;font-size:14px;color:var(--tz-ink-soft);cursor:pointer;line-height:1.45;text-align:start}
+.chip-f:hover{border-color:var(--tz-leaf)}
+.chip-f.on{background:var(--tz-leaf-deep);border-color:var(--tz-leaf-dark);color:#fff}
+.calc-out{position:sticky;top:16px;background:var(--tz-card);border:1px solid var(--tz-line);border-radius:var(--tz-r-lg);padding:16px;box-shadow:var(--tz-sh)}
+.co-empty{text-align:center;color:var(--tz-ink-mute);font-size:14.5px;padding:10px 4px}
+.co-empty p{font-size:14px;margin:8px 0 0}
+.co-big{font-family:var(--tz-serif);font-size:44px;font-weight:900;color:var(--tz-line-strong);line-height:1}
+.co-head{font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--tz-bronze-deep);margin-bottom:10px}
+.co-row{padding:10px 0;border-top:1px solid var(--tz-line-soft)}
+.co-row.first .co-t a{color:var(--tz-leaf-dark)}
+.co-t{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.co-t a{font-family:var(--tz-serif);font-weight:700;font-size:16.5px;color:var(--tz-ink);text-decoration:none}
+.co-pct{font-family:var(--tz-mono);font-size:13px;color:var(--tz-bronze-deep)}
+.co-meter{height:5px;background:var(--tz-parchment-2);border-radius:3px;margin:6px 0 4px;overflow:hidden}
+.co-meter i{display:block;height:100%;background:linear-gradient(90deg,var(--tz-leaf),var(--tz-leaf-deep));border-radius:3px}
+.co-sub{font-size:12.5px;color:var(--tz-ink-mute)}
+.co-miss,.co-con{font-size:13px;margin-top:5px;line-height:1.5;color:var(--tz-ink-soft)}
+.co-miss span{font-weight:700;color:var(--tz-leaf-deep)}
+.co-con span{font-weight:700;color:var(--tz-accent)}
+.co-foot{font-size:12.5px !important;color:var(--tz-ink-mute) !important;margin:12px 0 0 !important;line-height:1.55}
+.calc-print-note{display:none}
+
+/* ---- points table ---- */
+.ptab td.mono{font-family:var(--tz-mono);white-space:nowrap}
+.ptab td.uses{font-size:13.5px}
+.ptab td.uses a,#tzTable a{text-decoration:none}
+
+/* ---- responsive ---- */
+@media (max-width:1100px){ .calc{grid-template-columns:1fr} .calc-out{position:static;order:-1} }
+@media (max-width:900px){
+  .sidebar{position:fixed;right:0;top:0;z-index:60;transform:translateX(100%);transition:transform .25s;box-shadow:-10px 0 40px rgba(0,0,0,.15)}
+  .sidebar.open{transform:none}
+  .mobile-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--tz-card);border-bottom:1px solid var(--tz-line);position:sticky;top:0;z-index:50}
+  .mobile-bar .b-name{font-family:var(--tz-serif);font-weight:700;font-size:17px}
+  .hamb{border-radius:10px;padding:5px 12px;font-size:18px;cursor:pointer}
+  .tz-print{top:auto;bottom:14px}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px 70px}
+  .tz-hero{padding:42px 18px 38px}
+  .syn-body{grid-template-columns:1fr}
+  .tp-grid{border-right:0;border-top:1px solid var(--tz-line-soft);grid-template-rows:auto;grid-template-columns:1fr 1fr}
+  .tp-cell + .tp-cell{border-top:0;border-right:1px solid var(--tz-line-soft)}
+  .syn-dl{grid-template-columns:1fr;gap:2px}
+  .syn-dl dd{margin-bottom:8px}
+  .syn-h{padding:14px 16px 12px}.signs{padding:14px 16px}.syn-dl{padding:12px 16px 4px}
+  .tz-slot,.pearl{margin-inline:16px}
+  .two{grid-template-columns:1fr}
+  .lesson table{display:block;overflow-x:auto}
+  .lesson .lead{font-size:19px}
+}
+
+/* ---- print ---- */
+@media print{
+  .lesson{display:block !important;animation:none !important}
+  .jump,.calc,.ptpop,.mobile-bar{display:none !important}
+  .calc-print-note{display:block !important}
+  .syn{box-shadow:none !important;break-inside:avoid;page-break-inside:avoid}
+  .syns{display:block !important}
+  .syn{margin:0 0 10px}
+  .syn-h{padding:8px 14px 6px}.syn-h h4{font-size:15pt}.syn-zh{font-size:17pt}
+  .syn-body{grid-template-columns:1.6fr 1fr}
+  .signs{padding:8px 14px}.signs ul{columns:2;column-gap:18px}
+  .signs li,.tp-cell,.syn-dl dd,.pearl,.tz-slot{font-size:9.5pt;line-height:1.45}
+  .signs li{margin-bottom:2px;break-inside:avoid}
+  .tp-cell{padding:8px 12px}
+  .syn-dl{padding:8px 14px 2px;grid-template-columns:82px 1fr;gap:3px 12px}
+  .syn-dl dt{font-size:8.5pt}
+  .pt{font-size:8.5pt;padding:0 6px}
+  .tz-slot{margin:4px 14px 8px;padding:4px 10px}
+  .pearl{margin:0 14px 10px;padding:5px 10px}
+  .tz-hero .bg-zh{display:none}
+  .pt{border-color:#d3c6a6 !important}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><img src="../assets/logo.png" alt="Tizon Health"></div>
+    <div class="b-sub">ד״ר צחי זילבר · רפואה סינית</div>
+    <div class="side-title">תוכן הקורס — סינדרומים</div>
+    <nav id="nav"></nav>
+  </aside>
+
+  <div class="main">
+    <div class="mobile-bar">
+      <div class="b-name">סינדרומים · רפואה סינית</div>
+      <button type="button" class="hamb" onclick="toggleSide()" aria-label="תפריט">☰</button>
+    </div>
+
+    <header class="tz-hero" id="top">
+      <div class="bg-zh" aria-hidden="true">证</div>
+      <div class="hero-inner">
+        <img src="../assets/logo.png" alt="Tizon Health" class="tz-logo">
+        <p class="eyebrow">קורס מקצועי · אבחון ברפואה הסינית</p>
+        <h1>סינדרומים ברפואה ה<span class="accent">סינית</span></h1>
+        <p class="lead">משמונת העקרונות ועד שלושת המחממים — 96 סינדרומים בשבע שיטות הבחנה, עם סימנים, לשון, דופק, אטיולוגיה, פתוגנזה, עקרון טיפול ונקודות. ומחשבון אבחנה מבדלת שמחבר את הכול.</p>
+        <div class="hero-meta">
+          <span class="chip"><b>12</b> שיעורים</span>
+          <span class="chip"><b>96</b> סינדרומים</span>
+          <span class="chip"><b>מחשבון</b> אבחנה מבדלת</span>
+          <span class="chip"><b>3</b> נספחים</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrap" id="content"></div>
+  </div>
+</div>
+
+<script>
+/* ================= FEATURES — the shared vocabulary =================
+   Every sign, tongue and pulse the course uses. Syndrome cards list
+   their signs by these ids, and the diagnostic calculator scores by them,
+   so a card and the calculator can never disagree. */
+const FGROUPS = [
+  ['g','כללי'],['t','חום, קור וצמא'],['h','ראש, פנים וחושים'],['r','נשימה'],
+  ['d','עיכול'],['m','לב, שינה ונפש'],['u','כליות, שתן ומיניות'],['w','גינקולוגיה'],
+  ['s','גפיים, שרירים ועור'],['T','לשון'],['P','דופק']
+];
+const F = {
+  /* general */
+  fatigue:['g','עייפות וחולשה כללית'], weak_voice:['g','קול חלש, חוסר רצון לדבר'],
+  sp_sweat:['g','הזעה ספונטנית ביום'], night_sweat:['g','הזעת לילה'],
+  pale_face:['g','פנים חיוורות'], sallow:['g','פנים חיוורות-צהבהבות, דהויות'],
+  bright_pale:['g','פנים לבנות-בוהקות'], red_face:['g','פנים ועיניים אדומות'],
+  malar:['g','סומק בעצמות הלחיים'], dark_face:['g','פנים כהות'], cyanotic:['g','שפתיים או ציפורניים כחלחלות-סגולות'],
+  heavy_body:['g','כבדות בגוף ובראש'], edema:['g','בצקת'], emaciation:['g','רזון'], obesity:['g','עודף משקל'],
+  dizzy:['g','סחרחורת'], prolapse:['g','תחושת שקיעה או צניחת איברים'], bleeding:['g','נטייה לדימום ולחבורות'],
+  fixed_pain:['g','כאב דוקר וקבוע במקום אחד'], wandering_pain:['g','כאב מתנפח שנודד ומשתנה עם הרגש'],
+  lumps:['g','גושים או קשריות'], limp:['g','חוסר אנרגיה עמוק, רצון לשכב'],
+  /* temperature */
+  cold_aversion:['t','רתיעה מקור, צמרמורת'], cold_limbs:['t','גפיים קרות'], fever:['t','חום'],
+  high_fever:['t','חום גבוה'], tidal_fever:['t','חום או תחושת חום אחר הצהריים ובערב'],
+  five_palm:['t','חום בכפות הידיים, הרגליים ובחזה'], heat_aversion:['t','רתיעה מחום'],
+  alt_chills:['t','חילופי חום וקור'], thirst:['t','צמא, רצון למשקה קר'], great_thirst:['t','צמא עז'],
+  no_thirst:['t','אין צמא, העדפה למשקה חם'], dry_mouth_night:['t','יובש בפה ובגרון, בעיקר בלילה'],
+  bitter:['t','טעם מר בפה'], sweat_heavy:['t','הזעה מרובה'], no_sweat:['t','אין הזעה'],
+  /* head */
+  headache:['h','כאב ראש'], headache_side:['h','כאב ראש ברקות או בצד הראש'], tinnitus:['h','טנטון'],
+  deaf:['h','ירידה בשמיעה'], red_eyes:['h','עיניים אדומות וכואבות'], blurred:['h','ראייה מטושטשת, עיניים יבשות'],
+  mouth_ulcer:['h','פצעים בפה ובלשון'], gums:['h','חניכיים נפוחות או מדממות'], nosebleed:['h','דימום מהאף'],
+  sore_throat:['h','כאב גרון'], hair:['h','נשירת שיער או הלבנה מוקדמת'], loose_teeth:['h','שיניים רופפות'],
+  /* respiratory */
+  cough:['r','שיעול'], cough_weak:['r','שיעול חלש וכרוני'], sputum_white:['r','ליחה לבנה ומרובה'],
+  sputum_yellow:['r','ליחה צהובה-ירוקה וסמיכה'], sputum_dry:['r','שיעול יבש או ליחה מועטה ודביקה'],
+  sputum_blood:['r','ליחה עם פסי דם'], dyspnea:['r','קוצר נשימה'], dyspnea_exert:['r','קוצר נשימה במאמץ'],
+  wheeze:['r','צפצופים, אסתמה'], nasal:['r','נזלת או גודש באף'], inhale_hard:['r','קושי בשאיפה'],
+  freq_colds:['r','הצטננויות חוזרות'],
+  /* digestive */
+  poor_appetite:['d','תיאבון ירוד'], distension:['d','נפיחות בבטן, בעיקר אחרי אוכל'], loose_stool:['d','צואה רכה או שלשול'],
+  undigested:['d','מזון לא מעוכל בצואה'], dawn_diarrhea:['d','שלשול עם שחר'], constipation:['d','עצירות'],
+  dry_stool:['d','צואה יבשה וקשה'], foul_diarrhea:['d','שלשול מסריח וצורב'], nausea:['d','בחילה או הקאה'],
+  acid:['d','צרבת, החזרה חומצית'], belching:['d','גיהוקים'], epig_pain:['d','כאב באפיגסטריום'],
+  epig_burn:['d','צריבה ותחושת רעב באפיגסטריום'], hunger:['d','רעב מוגבר'], bad_breath:['d','ריח רע מהפה'],
+  hypochondriac:['d','מתח או כאב בצלעות'], cold_abd:['d','כאב בטן שמוקל בחום ובלחץ'],
+  pain_before_bm:['d','כאב בטן לפני יציאה, מוקל אחריה'], jaundice:['d','צהבת'],
+  sticky_mouth:['d','דביקות בפה, חוסר טעם'], blood_stool:['d','דם בצואה'], tenesmus:['d','טנזמוס, ריר בצואה'],
+  food_aversion:['d','רתיעה מאוכל, ריח של מזון מעופש בגיהוק'], abd_full:['d','בטן מלאה, קשה ורגישה ללחץ'],
+  /* mind */
+  insomnia:['m','נדודי שינה'], dreams:['m','שינה מופרעת, חלומות רבים'], palpitations:['m','דפיקות לב'],
+  anxiety:['m','חרדה, בהלה בקלות'], memory:['m','זיכרון ירוד, קשיי ריכוז'], irritable:['m','עצבנות, התפרצויות כעס'],
+  low_mood:['m','מצב רוח ירוד, אנחות'], restless:['m','אי-שקט נפשי'], mania:['m','התנהגות מאנית או דיבור לא קוהרנטי'],
+  dull_mind:['m','ערפול מחשבתי, קהות'], chest_pain:['m','כאב או לחץ בחזה'], chest_full:['m','תחושת מלאות ומחנק בחזה'],
+  plum:['m','תחושת גוש בגרון'], timid:['m','ביישנות, קושי לקבל החלטות'],
+  /* urinary */
+  lower_back:['u','חולשה או כאב בגב התחתון ובברכיים'], clear_urine:['u','שתן צלול ומרובה'],
+  nocturia:['u','השתנה לילית'], dark_urine:['u','שתן כהה ומועט'], painful_urine:['u','צריבה או כאב בהטלת שתן'],
+  dribbling:['u','טפטוף או דליפת שתן'], libido_low:['u','ירידה בחשק המיני, אימפוטנציה'],
+  emission:['u','פליטות זרע לילית'], infertility:['u','פוריות ירודה'], cloudy_urine:['u','שתן עכור'],
+  /* gynecology */
+  mens_scanty:['w','וסת מועטה וחיוורת'], mens_heavy:['w','וסת מרובה'], mens_clots:['w','וסת כהה עם קרישים'],
+  dysmen:['w','כאבי מחזור'], pms:['w','מתח, נפיחות ורגישות בשדיים לפני הווסת'], amenorrhea:['w','מחזור לא סדיר או היעדר וסת'],
+  leuk_white:['w','הפרשות לבנות ומימיות'], leuk_yellow:['w','הפרשות צהובות עם ריח'], spotting:['w','דימום בין וסתות'],
+  /* limbs and skin */
+  numbness:['s','נימול או חוסר תחושה בגפיים'], tremor:['s','רעד, עוויתות, טיקים'], cramps:['s','התכווצויות שרירים'],
+  stiffness:['s','נוקשות בשרירים ובגידים'], dry_skin:['s','עור ושיער יבשים'], itch:['s','גרד'],
+  nails:['s','ציפורניים שבירות'], joint_pain:['s','כאבי מפרקים'], neck_stiff:['s','נוקשות בעורף'],
+  body_ache:['s','כאבי גוף'], convulsions:['s','פרכוסים, קישיון בעורף'], rash:['s','פריחה'],
+  /* tongue */
+  T_pale:['T','לשון חיוורת'], T_red:['T','לשון אדומה'], T_red_tip:['T','קצה לשון אדום'],
+  T_red_sides:['T','צדי לשון אדומים'], T_deep_red:['T','לשון ארגמנית'], T_purple:['T','לשון סגולה או כתמים סגולים'],
+  T_swollen:['T','לשון נפוחה עם סימני שיניים'], T_thin:['T','גוף לשון דק'], T_cracked:['T','סדקים בלשון'],
+  T_nocoat:['T','ללא ציפוי או ציפוי מקולף'], T_white:['T','ציפוי לבן דק'], T_thick_white:['T','ציפוי לבן עבה ודביק'],
+  T_yellow:['T','ציפוי צהוב'], T_yellow_greasy:['T','ציפוי צהוב ודביק'], T_dry:['T','לשון יבשה'], T_wet:['T','לשון רטובה'],
+  /* pulse */
+  P_floating:['P','דופק צף'], P_deep:['P','דופק עמוק'], P_slow:['P','דופק איטי'], P_rapid:['P','דופק מהיר'],
+  P_weak:['P','דופק חלש וריק'], P_thin:['P','דופק דק'], P_wiry:['P','דופק מיתרי'], P_slippery:['P','דופק חלקלק'],
+  P_choppy:['P','דופק מחוספס'], P_full:['P','דופק מלא וחזק'], P_tight:['P','דופק מתוח'],
+  P_irregular:['P','דופק לא סדיר'], P_soggy:['P','דופק רך'], P_big:['P','דופק גדול ושוטף'], P_scattered:['P','דופק מפוזר, כמעט לא מורגש']
+};
+
+/* ================= SYNDROMES =================
+   l  = lesson id          f  = feature ids (a leading ! = key sign, double weight)
+   more = signs that are not in the shared vocabulary
+   t/p = tongue and pulse as written on the card
+   et = etiology  pg = pathogenesis  tp = treatment principle
+   pts = points (keys of PTS)  cf = classical reference formula
+   The Tizon formula slot is filled from TIZON below, never from here. */
+const SYN = [];
+function S(o){ SYN.push(o); }
+
+/* ---------- lesson: eight principles ---------- */
+S({l:'ba', id:'biao', zh:'表证', py:'Biao Zheng', he:'תסמונת חיצונית',
+ f:'!cold_aversion fever headache body_ache neck_stiff nasal !P_floating T_white',
+ more:['הופעה חדה ופתאומית','כאב גוף ועורף'],
+ t:'ללא שינוי בגוף הלשון, ציפוי לבן דק', p:'צף',
+ et:'חדירת פתוגן חיצוני (רוח בשילוב קור, חום, לחות או יובש) דרך העור, האף והפה.',
+ pg:'הפתוגן נלכד בשכבת הווי צ׳י שבין העור לשרירים. הווי צ׳י נאבק בו על פני השטח — ומכאן הרתיעה מקור, החום והדופק הצף. כל עוד יש רתיעה מקור, הפתוגן עדיין בחוץ.',
+ tp:'לשחרר את פני השטח ולגרש את הפתוגן החוצה (解表).',
+ pts:['LU7','LI4','GB20','BL12','GV14'], cf:'Gui Zhi Tang · Ma Huang Tang · Yin Qiao San — לפי סוג הפתוגן',
+ note:'הסימן המבחין: רתיעה מקור יחד עם חום. רתיעה מקור שנעלמה ומתחלפת ברתיעה מחום = הפתוגן חדר פנימה.'});
+
+S({l:'ba', id:'li', zh:'里证', py:'Li Zheng', he:'תסמונת פנימית',
+ f:'P_deep',
+ more:['אין רתיעה מקור עם חום בו-זמנית','מעורבות איברים פנימיים: עיכול, שינה, שתן, נפש','משך ממושך יותר'],
+ t:'גוף הלשון והציפוי משתנים בהתאם לאיבר ולטבע', p:'עמוק',
+ et:'פתוגן חיצוני שחדר פנימה, רגשות, תזונה, עבודת יתר וחולשה מולדת.',
+ pg:'הבעיה יושבת באיברי הזאנג-פו, בצ׳י, בדם ובנוזלים — לא בשכבה החיצונית. את טבעה (חום/קור, חסר/עודף) קובעים שאר שלושת צמדי העקרונות.',
+ tp:'לטפל באיבר ובחומר הפגוע לפי הטבע שזוהה.',
+ pts:[], cf:'',
+ note:'"פנימי" הוא מיקום, לא אבחנה. לעולם אין לעצור כאן — צריך להגדיר גם קור/חום וחסר/עודף.'});
+
+S({l:'ba', id:'shi-han', zh:'实寒', py:'Shi Han', he:'קור — עודף',
+ f:'!cold_abd cold_limbs no_thirst clear_urine loose_stool fixed_pain !T_thick_white P_deep !P_tight P_slow',
+ more:['כאב חד ועז שמוקל בחום ומחמיר בלחץ','הופעה חדה'],
+ t:'ציפוי לבן עבה', p:'עמוק, מתוח, איטי',
+ et:'קור חיצוני החודר ישירות לאיבר (קיבה, מעיים, רחם), מזון ומשקאות קרים.',
+ pg:'קור מכווץ ומקפיא. הוא חוסם את זרימת הצ׳י והדם — ומכאן כאב עז, דופק מתוח, והקלה בחום.',
+ tp:'לפזר קור ולחמם את הפנים (温中散寒).',
+ pts:['ST36','CV12','ST25','SP6','ST34'], cf:'Liang Fu Wan · Wu Zhu Yu Tang',
+ note:'מוקסה היא כלי מרכזי. מבדילים מקור-חסר: כאן הכאב חד ולחץ מחמיר אותו; בחסר הכאב עמום ולחץ מקל.'});
+
+S({l:'ba', id:'xu-han', zh:'虚寒', py:'Xu Han · Yang Xu', he:'קור — חסר (חסר יאנג)',
+ f:'!cold_limbs !cold_aversion fatigue limp bright_pale clear_urine loose_stool no_thirst sp_sweat !T_pale T_wet T_swollen !P_deep P_weak P_slow',
+ more:['כאב עמום שמוקל בחום ובלחץ'],
+ t:'חיוורת, רטובה, נפוחה', p:'עמוק, חלש, איטי',
+ et:'חולשה כרונית, מחלה ממושכת, גיל, עבודת יתר, עודף מזון קר לאורך זמן.',
+ pg:'היאנג אינו מספיק כדי לחמם את הגוף ולהניע את הנוזלים. החום הפנימי דועך, הנוזלים נאגרים ומופיעים קור, עייפות ושתן צלול.',
+ tp:'לחזק ולחמם את היאנג (温补阳气).',
+ pts:['GV4','BL23','CV4','CV6','ST36','KI3'], cf:'Jin Gui Shen Qi Wan · Fu Zi Li Zhong Wan',
+ note:'הדבר הראשון לבדוק: איזה איבר — טחול, כליות או לב. ההבחנה הזו קובעת את בחירת הנקודות.'});
+
+S({l:'ba', id:'shi-re', zh:'实热', py:'Shi Re', he:'חום — עודף',
+ f:'!high_fever !thirst red_face heat_aversion constipation dark_urine irritable sweat_heavy !T_red T_yellow T_dry !P_rapid P_full',
+ more:['אי-שקט, ובמקרים קשים דליריום'],
+ t:'אדומה עם ציפוי צהוב ויבש', p:'מהיר ומלא',
+ et:'פתוגן חיצוני שהפך לחום, מזון חריף ושומני, אלכוהול, רגש עצור שהפך לאש.',
+ pg:'חום פתוגני ממשי מצטבר בפנים ומאיץ הכול: הדופק, הדם והנפש. הוא שורף נוזלים — ומכאן צמא, יובש ועצירות.',
+ tp:'לנקות חום ולנקז אש (清热泻火).',
+ pts:['LI11','LI4','GV14','ST44','PC8'], cf:'Bai Hu Tang · Huang Lian Jie Du Tang',
+ note:'בחום-עודף הלשון כולה אדומה ויש ציפוי. בחום-חסר הלשון אדומה ללא ציפוי.'});
+
+S({l:'ba', id:'xu-re', zh:'虚热', py:'Xu Re · Yin Xu', he:'חום — חסר (חסר יין)',
+ f:'!tidal_fever !five_palm !night_sweat malar dry_mouth_night insomnia emaciation dark_urine dry_stool !T_red !T_nocoat T_cracked T_thin !P_thin P_rapid',
+ more:['צמא מתון, רצון ללגימות קטנות'],
+ t:'אדומה, ללא ציפוי, ייתכנו סדקים', p:'דק ומהיר',
+ et:'עבודת יתר, חוסר שינה, מחלת חום ממושכת, גיל המעבר, עודף מין.',
+ pg:'היין — כוח הקירור, הלחלוח וההזנה — מתרוקן. היאנג שנותר יחסית בעודף יוצר "חום ריק": לא חום ממשי, אלא היעדר קירור.',
+ tp:'להזין יין ולנקות חום ריק (滋阴清热).',
+ pts:['KI3','KI6','SP6','HT6','LU7','CV4'], cf:'Liu Wei Di Huang Wan · Zhi Bai Di Huang Wan',
+ note:'הזעת לילה + חום בחמשת הלבבות + לשון ללא ציפוי = הצירוף הקלאסי.'});
+
+S({l:'ba', id:'wang-yang', zh:'亡阳', py:'Wang Yang', he:'קריסת יאנג',
+ f:'!cold_limbs !sweat_heavy bright_pale limp dyspnea T_pale T_wet !P_scattered',
+ more:['זיעה קרה ודקה כמו פנינים','נשימה חלשה ושטחית','חוסר הכרה מתקרב'],
+ t:'חיוורת, רטובה, קצרה', p:'מפוזר, כמעט לא מורגש',
+ et:'שלב קיצון של חסר יאנג, אובדן נוזלים מסיבי, הלם.',
+ pg:'היאנג מתנתק מהיין ונמלט החוצה. הזיעה הקרה היא היאנג שעוזב את הגוף.',
+ tp:'להשיב את היאנג ולעצור את הקריסה (回阳救逆).',
+ pts:['CV4','CV8','GV20','ST36'], cf:'Shen Fu Tang · Si Ni Tang',
+ note:'מצב חירום — הפניה מיידית לטיפול רפואי. כאן לצורך זיהוי בלבד.', red:true});
+
+S({l:'ba', id:'wang-yin', zh:'亡阴', py:'Wang Yin', he:'קריסת יין',
+ f:'!sweat_heavy great_thirst restless red_face heat_aversion T_red T_dry !P_rapid P_weak',
+ more:['זיעה חמה, דביקה ומלוחה','עור חם','חוסר שקט עד דליריום'],
+ t:'אדומה ויבשה מאוד', p:'מהיר, חלש, צף ללא שורש',
+ et:'אובדן נוזלים חמור — חום גבוה ממושך, הזעה, שלשול או דימום.',
+ pg:'היין מתרוקן עד שאינו יכול לעגן את היאנג. החום שנותר דוחף את מעט הנוזלים שנשארו החוצה.',
+ tp:'להציל את היין ולעצור את הדליפה.',
+ pts:['KI3','KI6','CV4','PC6'], cf:'Sheng Mai San',
+ note:'מצב חירום — הפניה מיידית לטיפול רפואי. כאן לצורך זיהוי בלבד.', red:true});
+
+/* ---------- lesson: qi, blood and fluids ---------- */
+S({l:'qx', id:'qi-xu', zh:'气虚', py:'Qi Xu', he:'חסר צ׳י',
+ f:'!fatigue !weak_voice sp_sweat poor_appetite dyspnea_exert pale_face loose_stool T_pale T_swollen !P_weak',
+ more:['מחמיר במאמץ, משתפר במנוחה'],
+ t:'חיוורת, מעט נפוחה', p:'חלש וריק',
+ et:'תזונה לקויה, עבודת יתר, מחלה כרונית, חולשה מולדת.',
+ pg:'אין מספיק צ׳י כדי לבצע את חמשת תפקידיו: הנעה, חימום, הגנה, החזקה ושינוי. כל תפקוד חלש, וכל מאמץ מרוקן עוד.',
+ tp:'לחזק צ׳י (补气).',
+ pts:['ST36','CV6','SP3','LU9','BL20','BL21'], cf:'Si Jun Zi Tang',
+ note:'שאלה מנחה: איזה איבר בולט — טחול (עיכול), ריאות (נשימה והגנה), לב (דפיקות) או כליות (שתן ומין).'});
+
+S({l:'qx', id:'qi-xian', zh:'气陷', py:'Qi Xian', he:'שקיעת צ׳י',
+ f:'!prolapse fatigue weak_voice loose_stool dribbling T_pale !P_weak',
+ more:['צניחת רחם, טחורים או שלפוחית','שלשול כרוני','תחושת כובד ומשיכה כלפי מטה בבטן'],
+ t:'חיוורת', p:'חלש',
+ et:'המשך של חסר צ׳י הטחול, לידות מרובות, עמידה ממושכת, הרמת משאות.',
+ pg:'הצ׳י של הטחול אחראי לתנועה כלפי מעלה ולהחזקת האיברים במקומם. כשהוא חלש מדי, האיברים "נופלים".',
+ tp:'לחזק צ׳י ולהרים את היאנג (升阳举陷).',
+ pts:['GV20','CV6','ST36','BL20','CV12'], cf:'Bu Zhong Yi Qi Tang',
+ note:'GV20 עם מוקסה — הנקודה המרכזית להרמה.'});
+
+S({l:'qx', id:'qi-zhi', zh:'气滞', py:'Qi Zhi', he:'קיפאון צ׳י',
+ f:'!wandering_pain !distension low_mood irritable hypochondriac belching plum pms T_red_sides !P_wiry',
+ more:['תסמינים משתנים עם מצב הרוח','הקלה אחרי גיהוק או גזים'],
+ t:'רגילה או צדדים מעט אדומים', p:'מיתרי',
+ et:'רגשות עצורים — תסכול, כעס, מתח ממושך. לעתים גם תזונה לא סדירה.',
+ pg:'הצ׳י חדל לזרום בחופשיות ונעצר. במקום שבו הוא נעצר יש נפיחות וכאב; הכאב נודד כי הצ׳י אינו חומרי.',
+ tp:'להניע צ׳י ולשחרר קיפאון (理气行滞).',
+ pts:['LR3','LI4','PC6','GB34','LR14','TE6'], cf:'Chai Hu Shu Gan San · Yue Ju Wan',
+ note:'LI4 + LR3 = "ארבעת השערים" — פתיחה כללית של זרימת הצ׳י.'});
+
+S({l:'qx', id:'qi-ni', zh:'气逆', py:'Qi Ni', he:'צ׳י מורד',
+ f:'!nausea !belching cough wheeze acid headache dizzy P_wiry',
+ more:['שיהוקים','צ׳י הכבד עולה — כאב ראש וסחרחורת'],
+ t:'משתנה לפי האיבר', p:'מיתרי או חלקלק',
+ et:'קיפאון צ׳י, ליחה, מזון, רגש — כל דבר שמפריע לכיוון התנועה הטבעי.',
+ pg:'לכל איבר יש כיוון: צ׳י הריאות והקיבה יורד, צ׳י הכבד מתפשט. כשהכיוון מתהפך — הריאות משתעלות, הקיבה מקיאה, והכבד עולה לראש.',
+ tp:'להוריד את הצ׳י המורד (降逆).',
+ pts:['PC6','CV17','ST36','CV12','LU7','LR3'], cf:'Xuan Fu Dai Zhe Tang · Su Zi Jiang Qi Tang',
+ note:'זו תסמונת של כיוון, לא של כמות. בכל מקרה צריך לזהות איזה איבר מורד.'});
+
+S({l:'qx', id:'xue-xu', zh:'血虚', py:'Xue Xu', he:'חסר דם',
+ f:'!sallow dizzy blurred !numbness palpitations insomnia memory dry_skin nails mens_scanty !T_pale T_thin T_dry !P_thin',
+ more:['שפתיים חיוורות','הרדמות ונימול בגפיים'],
+ t:'חיוורת, דקה, מעט יבשה', p:'דק, או מחוספס',
+ et:'דימום, תזונה דלה, חולשת טחול שאינו מייצר דם, מחלה כרונית, לידה.',
+ pg:'הדם אינו מספיק כדי להזין ולהרטיב את הרקמות ואת השן. העור, השיער, הציפורניים והעיניים מאבדים ברק, והנפש אינה מעוגנת בלילה.',
+ tp:'להזין דם, ולחזק את הטחול שמייצר אותו (养血补脾).',
+ pts:['ST36','SP6','BL17','BL20','LR8','CV4'], cf:'Si Wu Tang · Ba Zhen Tang · Gui Pi Tang',
+ note:'חסר דם בסינית אינו זהה לאנמיה במעבדה, אבל לעתים קרובות הם הולכים יחד. כדאי לבקש ספירת דם ופריטין.'});
+
+S({l:'qx', id:'xue-yu', zh:'血瘀', py:'Xue Yu', he:'קיפאון דם',
+ f:'!fixed_pain dark_face cyanotic lumps mens_clots dysmen !T_purple !P_choppy P_wiry',
+ more:['כאב שמחמיר בלילה','ורידים בולטים מתחת ללשון','עור יבש ומחוספס, ורידים עכבישיים'],
+ t:'סגולה או כתמים סגולים, ורידים תת-לשוניים כהים ומורחבים', p:'מחוספס או מיתרי',
+ et:'קיפאון צ׳י ממושך, קור, חום, חסר צ׳י שאינו מניע, טראומה, ניתוחים.',
+ pg:'הדם מאט עד שנעצר ונקרש. בניגוד לקיפאון צ׳י, הכאב קבוע ודוקר, ונוצרים גושים חומריים.',
+ tp:'להניע דם ולפזר קיפאון (活血化瘀).',
+ pts:['SP10','BL17','SP6','LI4','LR3','PC6'], cf:'Xue Fu Zhu Yu Tang · Tao Hong Si Wu Tang',
+ note:'תמיד לשאול מה גרם לקיפאון: קור, חום, חסר צ׳י או קיפאון צ׳י. הגורם קובע את הטיפול.'});
+
+S({l:'qx', id:'xue-re', zh:'血热', py:'Xue Re', he:'חום בדם',
+ f:'!bleeding !rash itch irritable thirst mens_heavy nosebleed !T_red T_deep_red !P_rapid',
+ more:['דם בהיר ורב','פריחה אדומה וחמה'],
+ t:'אדומה עד ארגמנית', p:'מהיר',
+ et:'חום שחודר לדם — ממחלת חום, ממזון חריף, מאש הכבד או מרגש.',
+ pg:'החום מאיץ את הדם עד שהוא יוצא מכליו. ככל שהחום עמוק יותר, הדימום רב יותר והלשון כהה יותר.',
+ tp:'לקרר את הדם ולעצור דימום (凉血止血).',
+ pts:['SP10','LI11','SP1','BL40','LR2','KI2'], cf:'Xi Jiao Di Huang Tang (בגרסה מודרנית) · Qing Re Gu Jing Tang',
+ note:'שכיח בעור: פסוריאזיס אקוטית ואטופיק דרמטיטיס עם רקע חם.'});
+
+S({l:'qx', id:'jin-ku', zh:'津亏', py:'Jin Ku', he:'חסר נוזלים · יובש',
+ f:'!dry_skin dry_mouth_night dry_stool thirst sputum_dry T_dry T_nocoat P_thin',
+ more:['שפתיים סדוקות','גרון יבש'],
+ t:'יבשה, ייתכן קילוף', p:'דק',
+ et:'הזעה, שלשול או הקאה ממושכים, מחלת חום, אקלים יבש, גיל.',
+ pg:'הנוזלים הקלים (ג׳ין) והסמיכים (יה) מתרוקנים. רקמות שמלוחלחות בדרך כלל — עור, ריריות, מעיים — מתייבשות.',
+ tp:'לייצר נוזלים ולהרטיב (生津润燥).',
+ pts:['KI6','SP6','LU7','CV12','ST36'], cf:'Sha Shen Mai Dong Tang · Zeng Ye Tang',
+ note:'זהו שלב שלפני חסר יין. אם מופיעים חום ריק והזעת לילה — כבר מדובר בחסר יין.'});
+
+S({l:'qx', id:'shi', zh:'湿', py:'Shi', he:'לחות',
+ f:'!heavy_body !sticky_mouth distension poor_appetite loose_stool cloudy_urine leuk_white edema !T_thick_white T_swollen !P_slippery P_soggy',
+ more:['הרגשה "עטופה" בראש','מחמיר במזג אוויר לח'],
+ t:'ציפוי עבה ודביק', p:'חלקלק או רך',
+ et:'מזג אוויר לח, מזון שומני-מתוק-מוצרי חלב, וחולשת הטחול שאינו מעבד נוזלים.',
+ pg:'הלחות כבדה, דביקה ושוקעת. היא חוסמת את הצ׳י ומייצרת כבדות, נפיחות ותסמינים שקשה להיפטר מהם.',
+ tp:'לייבש ולפזר לחות, ולחזק את הטחול (健脾化湿).',
+ pts:['SP9','SP6','ST40','CV12','ST36','BL20'], cf:'Ping Wei San · Wu Ling San',
+ note:'לחות מצטרפת כמעט תמיד לקור או לחום. ציפוי לבן = לחות-קור, ציפוי צהוב = לחות-חום.'});
+
+S({l:'qx', id:'tan', zh:'痰', py:'Tan', he:'ליחה',
+ f:'!sputum_white !chest_full nausea dizzy dull_mind lumps obesity heavy_body !T_swollen T_thick_white !P_slippery',
+ more:['קשריות תת-עוריות, ציסטות','"ליחה בלתי נראית" — ערפול, סחרחורת'],
+ t:'נפוחה, ציפוי עבה ודביק', p:'חלקלק',
+ et:'לחות שהתעבתה לאורך זמן, חום שמייבש נוזלים, חולשת טחול, ריאות וכליות.',
+ pg:'"הטחול מייצר ליחה, הריאות אוגרות אותה." ליחה היא לחות שהתעבתה. היא יכולה לשבת בריאות, אך גם לערפל את המוח ולהיאסף כגושים.',
+ tp:'לפתור ליחה ולחזק את הטחול (化痰健脾).',
+ pts:['ST40','PC6','CV12','SP3','LU5','CV17'], cf:'Er Chen Tang · Wen Dan Tang',
+ note:'ST40 Fenglong היא נקודת המפתח לכל סוג ליחה.'});
+
+S({l:'qx', id:'shui', zh:'水肿', py:'Shui Zhong', he:'הצפת מים · בצקת',
+ f:'!edema !clear_urine cold_limbs heavy_body dyspnea_exert T_swollen T_wet P_deep P_slow',
+ more:['בצקת שמשאירה גומה בלחיצה','מעט שתן למרות שתייה'],
+ t:'נפוחה ורטובה', p:'עמוק',
+ et:'חולשת יאנג של הכליות והטחול, או רוח חיצונית שחוסמת את הריאות (בצקת חדה בפנים).',
+ pg:'שלושה איברים מנהלים מים: הריאות מפזרות, הטחול מעביר, הכליות מתמירות. כשאחד מהם נכשל, המים מצטברים ברקמות.',
+ tp:'לחמם יאנג ולהניע מים (温阳利水).',
+ pts:['CV9','SP9','KI7','BL22','BL23','ST28'], cf:'Zhen Wu Tang · Wu Ling San · Yue Bi Jia Zhu Tang (בצקת חדה)',
+ note:'בצקת חדה בפנים ובעפעפיים = ריאות. בצקת ברגליים = כליות וטחול. CV9 עם מוקסה.'});
+
+/* ---------- lesson: lungs and large intestine ---------- */
+S({l:'lu', id:'lu-qi-xu', zh:'肺气虚', py:'Fei Qi Xu', he:'חסר צ׳י הריאות',
+ f:'!cough_weak !dyspnea_exert !freq_colds weak_voice sp_sweat fatigue bright_pale sputum_white T_pale !P_weak',
+ more:['ליחה מימית ושקופה'],
+ t:'חיוורת', p:'חלש, בעיקר בעמדת הריאות (צון ימני)',
+ et:'שיעול ממושך, צער ועצב, ישיבה כפופה ממושכת, חולשת הטחול (האם אינה מזינה את הבן).',
+ pg:'הריאות שולטות בצ׳י ובנשימה ומפזרות את הווי צ׳י אל העור. כשהן חלשות — הנשימה קצרה, הקול חלש, והעור "פתוח" לזיעה ולפתוגנים.',
+ tp:'לחזק את צ׳י הריאות ואת הווי צ׳י (补肺益气固表).',
+ pts:['LU9','BL13','ST36','CV6','CV17','LU7'], cf:'Bu Fei Tang · Yu Ping Feng San',
+ note:'Yu Ping Feng San — ה"מסך מפני הרוח": בסיס למניעת הצטננויות חוזרות.'});
+
+S({l:'lu', id:'lu-yin-xu', zh:'肺阴虚', py:'Fei Yin Xu', he:'חסר יין הריאות',
+ f:'!sputum_dry !cough sputum_blood dry_mouth_night night_sweat five_palm tidal_fever malar weak_voice !T_red T_nocoat T_cracked !P_thin P_rapid',
+ more:['קול צרוד','דגדוג בגרון'],
+ t:'אדומה, ללא ציפוי, סדקים באזור הריאות', p:'דק ומהיר',
+ et:'עישון, שיעול כרוני, מחלת חום שייבשה את הריאות, עבודת יתר, חסר יין הכליות.',
+ pg:'הריאות "רכות" ורגישות ליובש. כשהיין שלהן מתרוקן, הן אינן מתלחלחות והחום הריק מעורר שיעול יבש ומזיק לכלי הדם הקטנים.',
+ tp:'להזין את יין הריאות ולהרטיב (滋阴润肺).',
+ pts:['LU9','LU1','BL13','BL43','KI6','CV17'], cf:'Bai He Gu Jin Tang · Sha Shen Mai Dong Tang',
+ note:'שיעול יבש ממושך עם דם בליחה מחייב שלילת שחפת ותהליך ממאיר.'});
+
+S({l:'lu', id:'lu-zao', zh:'肺燥', py:'Fei Zao', he:'יובש בריאות',
+ f:'!sputum_dry dry_mouth_night sore_throat dry_skin thirst T_dry P_thin',
+ more:['אף ושפתיים יבשים'],
+ t:'יבשה', p:'דק או צף',
+ et:'אקלים יבש, מיזוג אוויר וחימום, יובש סתווי.',
+ pg:'שלב מוקדם של חוסר נוזלים בריאות — עוד לפני שמופיע חום ריק. אם לא מטופל, מתקדם לחסר יין.',
+ tp:'להרטיב את הריאות.',
+ pts:['LU9','KI6','SP6','LU7'], cf:'Sang Xing Tang · Qing Zao Jiu Fei Tang',
+ note:'אגס מאודה עם שקדים ודבש — תמיכה תזונתית קלאסית.'});
+
+S({l:'lu', id:'lu-feng-han', zh:'风寒束肺', py:'Feng Han Shu Fei', he:'רוח-קור כובלת את הריאות',
+ f:'!cough !cold_aversion sputum_white nasal no_sweat headache body_ache fever !P_floating !P_tight T_white',
+ more:['נזלת שקופה ומימית','עיטושים'],
+ t:'ציפוי לבן דק', p:'צף ומתוח',
+ et:'חשיפה לרוח וקור.',
+ pg:'הקור מכווץ את הנקבוביות ואת הריאות. הריאות אינן יכולות לפזר ולהוריד, והצ׳י עולה כשיעול.',
+ tp:'לשחרר את פני השטח, לפזר רוח-קור ולשחרר את הריאות (宣肺散寒).',
+ pts:['LU7','LI4','BL12','BL13','GB20'], cf:'Ma Huang Tang · Xing Su San',
+ note:''});
+
+S({l:'lu', id:'lu-feng-re', zh:'风热犯肺', py:'Feng Re Fan Fei', he:'רוח-חום תוקפת את הריאות',
+ f:'!cough !sore_throat fever cold_aversion sputum_yellow thirst nasal headache T_red_tip T_yellow !P_floating !P_rapid',
+ more:['רתיעה קלה מקור, חום בולט יותר','נזלת צהובה'],
+ t:'קצה וצדדים אדומים, ציפוי לבן-צהוב דק', p:'צף ומהיר',
+ et:'חשיפה לרוח-חום, בעיקר באביב.',
+ pg:'החום עולה ומייבש. הגרון — שער הריאות — נפגע ראשון; הריאות מאבדות את יכולת הירידה.',
+ tp:'לשחרר את פני השטח, לפזר רוח-חום ולנקות את הריאות (疏风清热).',
+ pts:['LU11','LI11','LI4','LU5','GV14','TE5'], cf:'Yin Qiao San · Sang Ju Yin',
+ note:'הקזת LU11 — יעילה מאוד לכאב גרון חד.'});
+
+S({l:'lu', id:'lu-tan-re', zh:'痰热蕴肺', py:'Tan Re Yun Fei', he:'ליחה-חום בריאות',
+ f:'!sputum_yellow !cough wheeze dyspnea fever thirst chest_full !T_red T_yellow_greasy !P_slippery P_rapid',
+ more:['ליחה מסריחה או עם דם'],
+ t:'אדומה, ציפוי צהוב דביק', p:'חלקלק ומהיר',
+ et:'פתוגן חיצוני שהפך לחום ונשאר, עישון, מזון שומני.',
+ pg:'החום "מבשל" את הנוזלים בריאות לליחה סמיכה וצהובה. הליחה חוסמת את הירידה — ומכאן שיעול חזק וקוצר נשימה.',
+ tp:'לנקות חום, לפתור ליחה ולהוריד את צ׳י הריאות (清热化痰).',
+ pts:['LU5','LU1','ST40','LI11','CV17','BL13'], cf:'Qing Qi Hua Tan Wan',
+ note:'חום גבוה עם קוצר נשימה = שלילת דלקת ריאות.'});
+
+S({l:'lu', id:'lu-shi-tan', zh:'痰湿阻肺', py:'Tan Shi Zu Fei', he:'ליחה-לחות חוסמת את הריאות',
+ f:'!sputum_white !chest_full cough wheeze nausea heavy_body poor_appetite T_swollen !T_thick_white !P_slippery',
+ more:['ליחה שקל להוציא','מחמיר בשכיבה'],
+ t:'נפוחה, ציפוי לבן עבה ודביק', p:'חלקלק',
+ et:'חולשת הטחול לאורך זמן, מוצרי חלב, מתוקים ומזון קר.',
+ pg:'הטחול מייצר ליחה והריאות אוגרות אותה. זו תסמונת כרונית שמקורה בעיכול, ולכן הטיפול חייב לכלול את הטחול.',
+ tp:'לייבש לחות, לפתור ליחה ולחזק את הטחול (燥湿化痰).',
+ pts:['LU5','ST40','CV12','SP3','BL13','BL20'], cf:'Er Chen Tang · San Zi Yang Qin Tang',
+ note:''});
+
+S({l:'lu', id:'li-shi-re', zh:'大肠湿热', py:'Da Chang Shi Re', he:'לחות-חום במעי הגס',
+ f:'!foul_diarrhea !tenesmus blood_stool fever thirst dark_urine pain_before_bm T_yellow_greasy T_red !P_slippery P_rapid',
+ more:['תחושת צריבה בפי הטבעת','ריר ודם בצואה'],
+ t:'אדומה, ציפוי צהוב דביק', p:'חלקלק ומהיר',
+ et:'מזון מזוהם, מזון חריף ושומני, אלכוהול.',
+ pg:'לחות-חום שוקעת לחלק התחתון ומשבשת את ההעברה של המעי הגס. הלחות יוצרת ריר, החום יוצר צריבה ודם.',
+ tp:'לנקות חום, לייבש לחות ולהסדיר את המעי (清热利湿).',
+ pts:['ST25','ST37','LI11','SP9','BL25','LI4'], cf:'Ge Gen Huang Qin Huang Lian Tang · Bai Tou Weng Tang',
+ note:'דם בצואה מחייב בירור רפואי, בעיקר מעל גיל 45 או עם ירידה במשקל.'});
+
+S({l:'lu', id:'li-re-jie', zh:'大肠热结', py:'Da Chang Re Jie', he:'חום וקשיות במעי הגס',
+ f:'!constipation !dry_stool !abd_full thirst dark_urine bad_breath T_yellow T_dry P_deep P_full',
+ more:['כאב בטן שמחמיר בלחץ'],
+ t:'ציפוי צהוב עבה ויבש, לעתים חום-שחור', p:'עמוק ומלא',
+ et:'חום שעבר ליאנג-מינג, מזון חריף, התייבשות.',
+ pg:'החום מייבש את הנוזלים במעי והצואה מתקשה ונתקעת. זו אותה תמונה כמו יאנג-מינג באיבר בששת השלבים.',
+ tp:'לנקות חום ולהניע את המעי (泻热通便).',
+ pts:['ST25','ST37','TE6','LI11','SP15','KI6'], cf:'Da Cheng Qi Tang · Ma Zi Ren Wan',
+ note:'TE6 Zhigou — נקודה קלאסית לעצירות.'});
+
+/* ---------- lesson: spleen and stomach ---------- */
+S({l:'sp', id:'sp-qi-xu', zh:'脾气虚', py:'Pi Qi Xu', he:'חסר צ׳י הטחול',
+ f:'!poor_appetite !distension !loose_stool fatigue sallow weak_voice T_pale !T_swollen !P_weak',
+ more:['נפיחות אחרי ארוחה','גפיים חלשות'],
+ t:'חיוורת, נפוחה, סימני שיניים', p:'חלש, בעיקר בעמדת הטחול (גואן ימני)',
+ et:'אכילה לא סדירה, מזון קר ונא, עודף מחשבה ודאגה, עבודת יתר.',
+ pg:'הטחול אחראי על "ההמרה וההעברה" של המזון לצ׳י ולדם. כשהוא חלש — אין תיאבון, המזון אינו מעובד ונוצרים נפיחות ושלשול.',
+ tp:'לחזק את צ׳י הטחול (健脾益气).',
+ pts:['ST36','SP3','BL20','BL21','CV12','SP6'], cf:'Si Jun Zi Tang · Shen Ling Bai Zhu San',
+ note:'התסמונת השכיחה ביותר בקליניקה. ארוחות חמות ומבושלות בשעות קבועות הן חלק מהטיפול.'});
+
+S({l:'sp', id:'sp-yang-xu', zh:'脾阳虚', py:'Pi Yang Xu', he:'חסר יאנג הטחול',
+ f:'!cold_abd !cold_limbs loose_stool undigested poor_appetite distension edema fatigue leuk_white !T_pale T_wet T_swollen P_deep P_weak P_slow',
+ more:['קור בבטן','מחמיר במזון קר'],
+ t:'חיוורת, רטובה, נפוחה', p:'עמוק, חלש, איטי',
+ et:'המשך של חסר צ׳י הטחול, קור ממושך, מזון קר.',
+ pg:'מעבר לחולשה — אין חום שמניע את העיכול. נוזלים לא מתאדים ונאגרים כבצקת והפרשות, והמזון יוצא כמעט כמו שנכנס.',
+ tp:'לחמם את הטחול ולחזק יאנג (温中健脾).',
+ pts:['ST36','SP3','BL20','CV12','CV6','ST25'], cf:'Li Zhong Wan · Fu Zi Li Zhong Wan',
+ note:'מוקסה על CV12, ST36 ו-BL20 — בסיס הטיפול.'});
+
+S({l:'sp', id:'sp-xian', zh:'脾气下陷', py:'Pi Qi Xia Xian', he:'שקיעת צ׳י הטחול',
+ f:'!prolapse !loose_stool fatigue distension poor_appetite dribbling T_pale !P_weak',
+ more:['טחורים, צניחת רחם או פי טבעת','תחושת כובד בבטן התחתונה'],
+ t:'חיוורת', p:'חלש',
+ et:'חסר צ׳י טחול ממושך, לידות, עמידה ממושכת.',
+ pg:'ראו "שקיעת צ׳י" — כאן הטחול הוא המקור המובהק.',
+ tp:'לחזק את הטחול ולהרים את היאנג.',
+ pts:['GV20','CV6','ST36','BL20','SP3'], cf:'Bu Zhong Yi Qi Tang',
+ note:''});
+
+S({l:'sp', id:'sp-xue', zh:'脾不统血', py:'Pi Bu Tong Xue', he:'הטחול אינו שולט בדם',
+ f:'!bleeding !mens_heavy spotting blood_stool fatigue sallow poor_appetite T_pale !P_weak P_thin',
+ more:['דם בהיר ודליל','פטכיות וחבורות קלות'],
+ t:'חיוורת', p:'חלש ודק',
+ et:'חסר צ׳י הטחול ממושך.',
+ pg:'אחד מתפקידי הצ׳י הוא להחזיק את הדם בכלי הדם. כשהוא חלש — הדם "דולף": דימום רחמי, חבורות, דם בצואה.',
+ tp:'לחזק את הטחול ולהחזיק את הדם (健脾摄血).',
+ pts:['SP1','SP10','ST36','BL20','CV6'], cf:'Gui Pi Tang',
+ note:'SP1 עם מוקסה (גרגיר) — נקודה קלאסית לדימום רחמי מחולשה. דימום רב מחייב בירור.'});
+
+S({l:'sp', id:'sp-han-shi', zh:'寒湿困脾', py:'Han Shi Kun Pi', he:'קור-לחות כולאת את הטחול',
+ f:'!heavy_body !sticky_mouth distension no_thirst loose_stool nausea leuk_white !T_thick_white P_slippery P_slow',
+ more:['תחושת מלאות באפיגסטריום'],
+ t:'ציפוי לבן עבה ודביק', p:'חלקלק ואיטי, או רך',
+ et:'מזג אוויר לח וקר, מזון קר ונא, ישיבה על משטחים לחים.',
+ pg:'בניגוד לחסר יאנג הטחול — כאן הבעיה היא עודף: הלחות "כולאת" טחול שעשוי להיות בריא. הציפוי העבה הוא הסימן.',
+ tp:'לחמם, לייבש לחות ולשחרר את הטחול (温中燥湿).',
+ pts:['SP9','SP6','ST36','CV12','BL20','CV9'], cf:'Ping Wei San · Huo Xiang Zheng Qi San',
+ note:''});
+
+S({l:'sp', id:'sp-shi-re', zh:'脾胃湿热', py:'Pi Wei Shi Re', he:'לחות-חום בטחול ובקיבה',
+ f:'!sticky_mouth !distension nausea bitter thirst foul_diarrhea dark_urine jaundice heavy_body !T_yellow_greasy T_red !P_slippery P_rapid',
+ more:['צמא ללא רצון לשתות','חום שאינו יורד אחרי הזעה'],
+ t:'אדומה, ציפוי צהוב דביק', p:'חלקלק ומהיר',
+ et:'מזון שומני, חריף ומטוגן, אלכוהול, מזג אוויר חם ולח.',
+ pg:'לחות וחום נקשרים יחד, "כמו שמן בקמח" — קשה להפריד ביניהם. יבוש מגביר את החום, קירור מגביר את הלחות.',
+ tp:'לנקות חום ולפתור לחות (清热化湿).',
+ pts:['SP9','ST44','LI11','CV12','SP6','GB34'], cf:'Lian Po Yin · Yin Chen Hao Tang (צהבת)',
+ note:'צהבת מחייבת בירור רפואי מיידי.'});
+
+S({l:'sp', id:'st-yin-xu', zh:'胃阴虚', py:'Wei Yin Xu', he:'חסר יין הקיבה',
+ f:'!epig_burn hunger dry_mouth_night dry_stool tidal_fever nausea !T_nocoat T_red T_cracked !P_thin P_rapid',
+ more:['רעב ללא רצון לאכול','כאב עמום באפיגסטריום'],
+ t:'אדומה, מקולפת במרכז, סדק מרכזי', p:'דק ומהיר, בעיקר בעמדת הקיבה',
+ et:'אכילה מאוחרת בלילה, ארוחות חפוזות, עבודה בזמן אכילה, מחלת חום.',
+ pg:'הקיבה אוהבת לחות ושונאת יובש. כשהיין שלה מתרוקן היא אינה "מבשלת" ואינה מורידה, ונוצר חום ריק עדין.',
+ tp:'להזין את יין הקיבה (养胃阴).',
+ pts:['CV12','ST36','SP6','ST44','KI6'], cf:'Yi Wei Tang · Mai Men Dong Tang',
+ note:'מקלוף במרכז הלשון בצורת "מפה" = סימן מובהק.'});
+
+S({l:'sp', id:'st-huo', zh:'胃火', py:'Wei Huo', he:'אש בקיבה',
+ f:'!epig_burn !hunger great_thirst bad_breath gums mouth_ulcer acid constipation !T_red T_yellow T_dry !P_rapid P_full',
+ more:['חניכיים נפוחות ומדממות'],
+ t:'אדומה, ציפוי צהוב יבש', p:'מהיר ומלא',
+ et:'מזון חריף, אלכוהול, עישון, רגשות עזים.',
+ pg:'חום-עודף בקיבה "שורף" את המזון במהירות — ולכן רעב מוגבר. האש עולה לאורך ערוץ הקיבה לחניכיים ולפה.',
+ tp:'לנקות את אש הקיבה (清胃泻火).',
+ pts:['ST44','ST21','LI11','CV12','ST34','LI4'], cf:'Qing Wei San · Yu Nü Jian',
+ note:''});
+
+S({l:'sp', id:'st-shi', zh:'食滞', py:'Shi Zhi', he:'קיפאון מזון',
+ f:'!food_aversion !abd_full !belching nausea acid bad_breath loose_stool T_thick_white P_slippery P_full',
+ more:['הקאה שמביאה הקלה','צואה מסריחה'],
+ t:'ציפוי עבה, דביק ומעופש', p:'חלקלק ומלא',
+ et:'אכילת יתר, אכילה מהירה, אכילה ברגש.',
+ pg:'מזון שאינו מתעכל עומד בקיבה. הקיבה אינה מצליחה להוריד אותו, והוא תוסס ועולה.',
+ tp:'לעכל את המזון ולפזר את הקיפאון (消食导滞).',
+ pts:['CV10','ST21','ST44','ST36','SP4','PC6'], cf:'Bao He Wan',
+ note:'שכיח מאוד בילדים. הלשון מראה ציפוי עבה במרכז ובחלק האחורי.'});
+
+S({l:'sp', id:'st-han', zh:'胃寒', py:'Wei Han', he:'קור בקיבה',
+ f:'!epig_pain !cold_abd nausea no_thirst cold_limbs T_white T_wet P_slow P_tight',
+ more:['הקאה של נוזל צלול','כאב שמחמיר בשתייה קרה'],
+ t:'ציפוי לבן ורטוב', p:'איטי ומתוח (עודף) או חלש (חסר)',
+ et:'מזון ומשקאות קרים, קור חיצוני שחודר לבטן.',
+ pg:'הקור מכווץ ומשתק את הקיבה. בצורה החדה — כאב עז; בצורה הכרונית — מתמזגת עם חסר יאנג הטחול.',
+ tp:'לחמם את הקיבה ולפזר קור (温胃散寒).',
+ pts:['CV12','ST36','ST21','PC6','SP4'], cf:'Liang Fu Wan · Li Zhong Wan',
+ note:''});
+
+/* ---------- lesson: heart, small intestine, pericardium ---------- */
+S({l:'ht', id:'ht-qi-xu', zh:'心气虚', py:'Xin Qi Xu', he:'חסר צ׳י הלב',
+ f:'!palpitations dyspnea_exert sp_sweat fatigue pale_face T_pale !P_weak P_irregular',
+ more:['דפיקות שמחמירות במאמץ'],
+ t:'חיוורת', p:'חלש, לעתים לא סדיר',
+ et:'מחלה כרונית, אובדן דם, עצב ממושך, חולשה מולדת.',
+ pg:'הלב מניע את הדם בכלי הדם. כשהצ׳י שלו חלש, ההנעה חלשה — דפיקות, עייפות וזיעה במאמץ (הזיעה היא "הנוזל של הלב").',
+ tp:'לחזק את צ׳י הלב (补心气).',
+ pts:['HT5','PC6','BL15','CV17','CV6','ST36'], cf:'Yang Xin Tang · Zhi Gan Cao Tang',
+ note:''});
+
+S({l:'ht', id:'ht-yang-xu', zh:'心阳虚', py:'Xin Yang Xu', he:'חסר יאנג הלב',
+ f:'!palpitations !cold_limbs chest_full dyspnea_exert sp_sweat bright_pale cyanotic T_pale T_wet T_swollen P_deep P_weak P_irregular',
+ more:['לחץ בחזה שמחמיר בקור'],
+ t:'חיוורת, רטובה, נפוחה', p:'עמוק, חלש, לא סדיר',
+ et:'המשך של חסר צ׳י הלב, חסר יאנג הכליות.',
+ pg:'אין חום שמניע את הדם בחזה. היאנג של החזה (胸阳) אינו זורם, ונוצרים קור, לחץ וגוון כחלחל.',
+ tp:'לחמם ולחזק את יאנג הלב (温通心阳).',
+ pts:['HT5','PC6','BL15','CV17','CV6','GV14'], cf:'Gui Zhi Gan Cao Tang · Shen Fu Tang',
+ note:'כאב חזה מחייב שלילת אירוע לבבי — תמיד, ובכל גיל.', red:true});
+
+S({l:'ht', id:'ht-xue-xu', zh:'心血虚', py:'Xin Xue Xu', he:'חסר דם הלב',
+ f:'!palpitations !insomnia dreams memory anxiety dizzy pale_face sallow T_pale T_thin !P_thin',
+ more:['קושי להירדם'],
+ t:'חיוורת ודקה', p:'דק',
+ et:'דימום, חסר דם כללי, דאגה ומחשבה מרובה, חולשת הטחול.',
+ pg:'הדם הוא "הבית" של השן. כשאין מספיק דם בלב, השן אינה מעוגנת — בעיקר בלילה — ומופיעים קושי להירדם, חלומות וחרדה עדינה.',
+ tp:'להזין את דם הלב ולהרגיע את השן (养血安神).',
+ pts:['HT7','PC6','BL15','BL17','SP6','CV14'], cf:'Gui Pi Tang · Suan Zao Ren Tang',
+ note:''});
+
+S({l:'ht', id:'ht-yin-xu', zh:'心阴虚', py:'Xin Yin Xu', he:'חסר יין הלב',
+ f:'!palpitations !insomnia !restless night_sweat five_palm malar dry_mouth_night anxiety !T_red T_red_tip T_nocoat !P_thin P_rapid',
+ more:['התעוררות באמצע הלילה','סדק עמוק עד הקצה'],
+ t:'אדומה, קצה אדום יותר, ללא ציפוי', p:'דק ומהיר',
+ et:'מתח וחרדה ממושכים, עבודת יתר, חסר יין הכליות.',
+ pg:'בנוסף לחוסר עיגון, יש חום ריק שמטריד את השן. לכן — לא רק קושי להירדם, אלא אי-שקט, התעוררות וחום.',
+ tp:'להזין את יין הלב, לנקות חום ריק ולהרגיע את השן (滋阴安神).',
+ pts:['HT6','HT7','PC7','KI3','KI6','SP6','CV14'], cf:'Tian Wang Bu Xin Dan',
+ note:'HT6 + KI7 — הצירוף הקלאסי להזעת לילה.'});
+
+S({l:'ht', id:'ht-huo', zh:'心火亢盛', py:'Xin Huo Kang Sheng', he:'אש הלב בוערת',
+ f:'!mouth_ulcer !restless insomnia thirst red_face bitter dark_urine painful_urine !T_red_tip T_red T_yellow !P_rapid P_full',
+ more:['פצעים בקצה הלשון','אי-שקט עד מאניה'],
+ t:'קצה אדום ונפוח, עם נקודות אדומות', p:'מהיר ומלא, בעיקר בעמדת הלב',
+ et:'רגשות עזים ממושכים — חרדה, תשוקה, כעס — שהפכו לאש.',
+ pg:'האש עולה ללשון, "נבט הלב", ושורפת את השן. דרך הקשר לחלק הדק היא יורדת לשתן — צריבה ושתן כהה.',
+ tp:'לנקות את אש הלב ולהרגיע את השן (清心泻火).',
+ pts:['HT8','HT7','PC7','CV14','KI6','SP6'], cf:'Dao Chi San · Xie Xin Tang',
+ note:''});
+
+S({l:'ht', id:'ht-tan-huo', zh:'痰火扰心', py:'Tan Huo Rao Xin', he:'ליחה-אש מטרידה את הלב',
+ f:'!mania !restless insomnia palpitations bitter red_face sputum_yellow !T_red T_yellow_greasy !P_slippery P_rapid',
+ more:['דיבור לא קוהרנטי, צחוק או בכי לא מוסבר','התנהגות אלימה במקרים קשים'],
+ t:'אדומה, ציפוי צהוב דביק, סדק מרכזי עמוק עם ציפוי', p:'חלקלק ומהיר',
+ et:'רגשות עזים יחד עם מזון שומני וחריף.',
+ pg:'אש וליחה יחד "סוגרות את פתחי הלב". האש מניעה, הליחה מערפלת — ומכאן התנהגות מבולבלת וסוערת.',
+ tp:'לנקות את אש הלב, לפתור ליחה ולפתוח את הפתחים (清心豁痰).',
+ pts:['PC5','HT7','ST40','HT8','GV20','LR2'], cf:'Wen Dan Tang + Huang Lian',
+ note:'מצבים פסיכוטיים מחייבים שילוב עם טיפול פסיכיאטרי.', red:true});
+
+S({l:'ht', id:'ht-tan-mi', zh:'痰迷心窍', py:'Tan Mi Xin Qiao', he:'ליחה מערפלת את פתחי הלב',
+ f:'!dull_mind !sputum_white heavy_body dizzy T_swollen T_thick_white !P_slippery',
+ more:['מבט קהה, מלמול לעצמו','עד חוסר הכרה ורעשי ליחה בגרון'],
+ t:'נפוחה, ציפוי לבן עבה ודביק', p:'חלקלק',
+ et:'דיכאון רגשי ממושך עם חולשת טחול, שבץ.',
+ pg:'ליחה ללא חום. היא עוטפת את השן ומכבה אותה — קהות, דיכאון, בלבול.',
+ tp:'לפתור ליחה ולפתוח את פתחי הלב (化痰开窍).',
+ pts:['PC5','HT9','GV26','ST40','CV12'], cf:'Di Tan Tang · Su He Xiang Wan',
+ note:''});
+
+S({l:'ht', id:'ht-xue-yu', zh:'心血瘀阻', py:'Xin Xue Yu Zu', he:'קיפאון דם בלב',
+ f:'!chest_pain !fixed_pain palpitations cyanotic chest_full !T_purple !P_choppy P_irregular',
+ more:['כאב דוקר בחזה שמקרין לכתף ולזרוע השמאלית'],
+ t:'סגולה, ורידים תת-לשוניים כהים', p:'מחוספס או לא סדיר',
+ et:'חסר יאנג הלב, קיפאון צ׳י ממושך, ליחה, קור.',
+ pg:'הדם נעצר בכלי הלב. זו המקבילה הסינית לתעוקת חזה.',
+ tp:'להניע דם, לפזר קיפאון ולפתוח את יאנג החזה (活血通络).',
+ pts:['PC6','PC4','HT7','CV17','BL17','BL14'], cf:'Xue Fu Zhu Yu Tang · Dan Shen Yin',
+ note:'כאב חזה = הפניה רפואית דחופה לפני כל טיפול.', red:true});
+
+S({l:'ht', id:'si-re', zh:'小肠实热', py:'Xiao Chang Shi Re', he:'חום-עודף במעי הדק',
+ f:'!painful_urine !dark_urine mouth_ulcer restless thirst T_red_tip T_yellow P_rapid',
+ more:['דם בשתן','כאב שמקרין לתחתית הבטן'],
+ t:'קצה אדום, ציפוי צהוב', p:'מהיר',
+ et:'אש הלב שעוברת לאיבר הזוג שלה.',
+ pg:'המעי הדק מפריד "צלול" מ"עכור" ומעביר נוזלים לשלפוחית. החום שעובר אליו מהלב מגיע לשתן.',
+ tp:'לנקות חום מהלב ומהמעי הדק ולהניע שתן.',
+ pts:['SI2','HT8','SI5','CV3','SP6'], cf:'Dao Chi San',
+ note:''});
+
+/* ---------- lesson: liver and gallbladder ---------- */
+S({l:'lr', id:'lr-qi-yu', zh:'肝气郁结', py:'Gan Qi Yu Jie', he:'קיפאון צ׳י הכבד',
+ f:'!hypochondriac !low_mood !pms irritable plum belching distension amenorrhea dysmen T_red_sides !P_wiry',
+ more:['אנחות תכופות','מחמיר במתח'],
+ t:'רגילה או צדדים מעט אדומים', p:'מיתרי, בעיקר בצד שמאל',
+ et:'תסכול, כעס עצור, מתח רגשי ממושך.',
+ pg:'הכבד אחראי על הזרימה החלקה של הצ׳י בכל הגוף. כשהזרימה נחסמת — הכאב נודד לאורך ערוץ הכבד: צלעות, שדיים, גרון ורחם.',
+ tp:'לשחרר את הכבד ולהניע צ׳י (疏肝理气).',
+ pts:['LR3','LR14','GB34','PC6','TE6','LI4'], cf:'Xiao Yao San · Chai Hu Shu Gan San',
+ note:'התסמונת השכיחה ביותר בעולם המודרני, ובמקרים רבים הבסיס לתסמונות אחרות של הכבד.'});
+
+S({l:'lr', id:'lr-xue-xu', zh:'肝血虚', py:'Gan Xue Xu', he:'חסר דם הכבד',
+ f:'!blurred !numbness cramps nails dizzy mens_scanty amenorrhea dry_skin sallow T_pale T_dry !P_thin P_choppy',
+ more:['ראייה לילית ירודה, "זבובים" בעיניים'],
+ t:'חיוורת, צדדים כתומים-חיוורים ויבשים', p:'דק או מחוספס',
+ et:'דימום, תזונה לקויה, חולשת טחול, לידות.',
+ pg:'"הכבד אוגר את הדם". בלילה הדם חוזר לכבד, וביום הוא מזין את העיניים, הגידים והציפורניים. כשאין מספיק — העיניים מתייבשות והגידים מתכווצים.',
+ tp:'להזין את דם הכבד (养肝血).',
+ pts:['LR8','SP6','ST36','BL18','BL17','BL20'], cf:'Si Wu Tang · Bu Gan Tang',
+ note:''});
+
+S({l:'lr', id:'lr-yin-xu', zh:'肝阴虚', py:'Gan Yin Xu', he:'חסר יין הכבד',
+ f:'!blurred !dizzy dry_mouth_night night_sweat five_palm numbness irritable insomnia !T_red T_nocoat !P_thin P_rapid',
+ more:['עיניים יבשות עם תחושת חול'],
+ t:'אדומה, ללא ציפוי, בעיקר בצדדים', p:'דק ומהיר, או מיתרי-דק',
+ et:'המשך של חסר דם הכבד, חסר יין הכליות.',
+ pg:'מעבר לחסר דם — גם חום ריק. היין אינו יכול לעגן את היאנג, ולכן לעתים קרובות זו הקרקע ליאנג הכבד העולה.',
+ tp:'להזין את יין הכבד והכליות (滋养肝肾).',
+ pts:['LR8','KI3','SP6','BL18','BL23','KI6'], cf:'Yi Guan Jian · Qi Ju Di Huang Wan',
+ note:''});
+
+S({l:'lr', id:'lr-yang', zh:'肝阳上亢', py:'Gan Yang Shang Kang', he:'יאנג הכבד עולה',
+ f:'!headache_side !dizzy tinnitus irritable red_face insomnia blurred lower_back T_red T_red_sides !P_wiry P_thin',
+ more:['כאב ראש פועם','סחרחורת שמחמירה בכעס'],
+ t:'אדומה בצדדים, ייתכן ללא ציפוי', p:'מיתרי, לעתים מיתרי-דק',
+ et:'כעס ותסכול על רקע חסר יין הכבד או הכליות.',
+ pg:'זו תסמונת "חסר מתחת, עודף מעל". היין חלש בחלק התחתון ואינו מעגן את היאנג — שעולה לראש וגורם כאב וסחרחורת.',
+ tp:'להוריד ולהשקיט את יאנג הכבד, ולהזין יין (平肝潜阳).',
+ pts:['LR3','GB20','GB43','KI3','SP6','EX-HN5'], cf:'Tian Ma Gou Teng Yin',
+ note:'מאוד שכיח במיגרנה וביתר לחץ דם. צריך למדוד לחץ דם.'});
+
+S({l:'lr', id:'lr-huo', zh:'肝火上炎', py:'Gan Huo Shang Yan', he:'אש הכבד עולה',
+ f:'!red_eyes !headache_side !irritable bitter red_face tinnitus thirst insomnia dreams constipation dark_urine nosebleed !T_red T_red_sides T_yellow !P_wiry P_rapid',
+ more:['התפרצויות זעם','כאב ראש חזק ופועם'],
+ t:'אדומה, צדדים אדומים יותר, ציפוי צהוב יבש', p:'מיתרי ומהיר',
+ et:'כעס ממושך, אלכוהול, מזון חריף ושומני. לעתים קיפאון צ׳י הכבד שהפך לאש.',
+ pg:'בניגוד ליאנג עולה — כאן יש חום-עודף ממשי. האש שורפת נוזלים ומתלקחת כלפי מעלה לראש, לעיניים ולאוזניים.',
+ tp:'לנקות את אש הכבד (清肝泻火).',
+ pts:['LR2','LR3','GB20','GB43','EX-HN5','LI11'], cf:'Long Dan Xie Gan Tang',
+ note:'ההבדל מיאנג עולה: אש = צמא, טעם מר, עצירות, ציפוי צהוב. יאנג עולה = חסר יין מתחת.'});
+
+S({l:'lr', id:'lr-feng', zh:'肝风内动', py:'Gan Feng Nei Dong', he:'רוח פנימית של הכבד',
+ f:'!tremor !dizzy convulsions numbness headache neck_stiff T_red P_wiry',
+ more:['רעד, טיקים, עוויתות בפנים','במקרה קשה — שבץ: נפילה, שיתוק חד-צדדי, עיוות הפה'],
+ t:'רועדת או סוטה לצד, אדומה או חיוורת לפי הסוג', p:'מיתרי',
+ et:'שלושה מקורות: יאנג הכבד שהקצין, חום קיצוני (בילדים עם חום גבוה), וחסר דם שמשאיר "ריק" שהרוח ממלאת.',
+ pg:'"כל הרוח, הרעד והסחרחורת שייכים לכבד." הרוח היא תנועה — היא מניעה מה שאמור להיות יציב.',
+ tp:'להשקיט את הכבד ולכבות רוח (平肝熄风), ולטפל במקור.',
+ pts:['LR3','GB20','GV16','GV20','LI4','SP6'], cf:'Zhen Gan Xi Feng Tang · Ling Jiao Gou Teng Tang · Da Ding Feng Zhu',
+ note:'סימני שבץ — פנייה מיידית למיון.', red:true});
+
+S({l:'lr', id:'lr-shi-re', zh:'肝胆湿热', py:'Gan Dan Shi Re', he:'לחות-חום בכבד ובכיס המרה',
+ f:'!hypochondriac !bitter jaundice nausea fever alt_chills dark_urine leuk_yellow itch !T_yellow_greasy T_red_sides !P_wiry P_slippery P_rapid',
+ more:['גרד ופריחה באזור המפשעה','הפרשות צהובות'],
+ t:'ציפוי צהוב דביק, צדדים אדומים', p:'מיתרי, חלקלק ומהיר',
+ et:'מזון שומני ומטוגן, אלכוהול, ולעתים חשיפה ללחות-חום חיצונית.',
+ pg:'לחות-חום שוקעת לאורך ערוץ הכבד — לאיברי המין ולמפשעה — ועולה לכיס המרה. מכאן הצירוף של כאב צלעות, טעם מר והפרשות.',
+ tp:'לנקות חום ולפתור לחות מהכבד ומכיס המרה (清利肝胆湿热).',
+ pts:['GB34','LR14','GB24','LR5','SP9','BL19'], cf:'Long Dan Xie Gan Tang · Yin Chen Hao Tang',
+ note:'כאב חד בצלעות ימין עם חום מחייב שלילת דלקת בכיס המרה.'});
+
+S({l:'lr', id:'lr-han', zh:'寒滞肝脉', py:'Han Zhi Gan Mai', he:'קור עומד בערוץ הכבד',
+ f:'!cold_abd !fixed_pain cold_limbs T_white T_wet !P_deep P_wiry P_slow',
+ more:['כאב בבטן התחתונה המקרין לאשכים או לשפתי הפות','התכווצות של שק האשכים'],
+ t:'ציפוי לבן ורטוב', p:'עמוק, מיתרי ואיטי',
+ et:'חשיפה לקור, ישיבה על משטחים קרים.',
+ pg:'ערוץ הכבד מקיף את איברי המין. קור שחודר אליו מכווץ אותו.',
+ tp:'לחמם את הכבד ולפזר קור.',
+ pts:['LR1','LR5','CV3','LR3','ST29'], cf:'Nuan Gan Jian',
+ note:''});
+
+S({l:'lr', id:'gb-xu', zh:'胆气虚', py:'Dan Qi Xu', he:'חולשת כיס המרה',
+ f:'!timid !anxiety insomnia dizzy palpitations T_pale P_weak',
+ more:['חוסר החלטיות, היבהלות בקלות','התעוררות מוקדמת בבוקר'],
+ t:'חיוורת או רגילה', p:'חלש',
+ et:'אופי, חסר צ׳י או דם, שילוב עם חסר הלב.',
+ pg:'כיס המרה שולט ב"אומץ" ובהחלטה. כשהוא חלש — היבהלות וחוסר נחישות.',
+ tp:'לחזק את כיס המרה והלב.',
+ pts:['GB40','HT7','BL19','GB34','ST36'], cf:'An Shen Ding Zhi Wan · Wen Dan Tang',
+ note:''});
+
+/* ---------- lesson: kidney and bladder ---------- */
+S({l:'ki', id:'ki-yin-xu', zh:'肾阴虚', py:'Shen Yin Xu', he:'חסר יין הכליות',
+ f:'!lower_back !night_sweat !tinnitus five_palm tidal_fever dry_mouth_night dizzy memory dark_urine emission loose_teeth malar !T_red T_nocoat !P_thin P_rapid',
+ more:['כאב עמום בעקבים'],
+ t:'אדומה, ללא ציפוי, סדקים', p:'דק ומהיר, ריק בעמדת הצ׳י השמאלי',
+ et:'עבודת יתר לאורך שנים, חוסר שינה, עודף מין, מחלה כרונית, גיל המעבר.',
+ pg:'הכליות הן "שורש היין" של כל הגוף. כשהיין שלהן מתרוקן, כל האיברים — בעיקר הכבד, הלב והריאות — מאבדים את המקור לקירור וללחלוח.',
+ tp:'להזין את יין הכליות (滋补肾阴).',
+ pts:['KI3','KI6','SP6','CV4','BL23','KI10'], cf:'Liu Wei Di Huang Wan · Zuo Gui Wan',
+ note:''});
+
+S({l:'ki', id:'ki-yang-xu', zh:'肾阳虚', py:'Shen Yang Xu', he:'חסר יאנג הכליות',
+ f:'!lower_back !cold_limbs !libido_low clear_urine nocturia limp bright_pale dawn_diarrhea edema infertility !T_pale T_wet T_swollen !P_deep P_weak P_slow',
+ more:['קור בגב התחתון ובברכיים'],
+ t:'חיוורת, רטובה, נפוחה', p:'עמוק, חלש, בעיקר בעמדת הצ׳י הימני',
+ et:'חולשה מולדת, גיל, מחלה כרונית, קור ממושך, עודף מין.',
+ pg:'הכליות הן גם "שורש היאנג" — אש השער (命门火). כשהיא דועכת, אין חום להניע מים, לחמם את הטחול ולהזין את התשוקה.',
+ tp:'לחמם ולחזק את יאנג הכליות (温补肾阳).',
+ pts:['GV4','BL23','KI3','KI7','CV4','CV6'], cf:'Jin Gui Shen Qi Wan · You Gui Wan',
+ note:'מוקסה על GV4 ו-BL23.'});
+
+S({l:'ki', id:'ki-qi-bu-gu', zh:'肾气不固', py:'Shen Qi Bu Gu', he:'צ׳י הכליות אינו מחזיק',
+ f:'!dribbling !nocturia !clear_urine lower_back emission leuk_white T_pale !P_weak P_deep',
+ more:['טפטוף אחרי השתנה','הרטבה בלילה','הפלות חוזרות'],
+ t:'חיוורת', p:'עמוק וחלש',
+ et:'גיל, לידות מרובות, עודף מין, חולשה מולדת.',
+ pg:'הכליות שולטות בשני הפתחים התחתונים. כשהצ׳י שלהן אינו "סוגר" — שתן, זרע והפרשות דולפים.',
+ tp:'לחזק ולייצב את צ׳י הכליות (固摄肾气).',
+ pts:['BL23','KI3','CV4','CV6','GV4','BL32'], cf:'Suo Quan Wan · Jin Suo Gu Jing Wan',
+ note:''});
+
+S({l:'ki', id:'ki-na-qi', zh:'肾不纳气', py:'Shen Bu Na Qi', he:'הכליות אינן קולטות את הצ׳י',
+ f:'!inhale_hard !dyspnea_exert wheeze sp_sweat lower_back clear_urine T_pale !P_deep P_weak',
+ more:['יותר נשיפה משאיפה','אסתמה כרונית אצל קשישים'],
+ t:'חיוורת', p:'עמוק וחלש',
+ et:'אסתמה ממושכת, מחלת ריאות כרונית, גיל.',
+ pg:'הריאות מורידות את הצ׳י, והכליות "אוחזות" אותו. כשהכליות חלשות, השאיפה נשארת שטחית.',
+ tp:'לחזק את הכליות כדי שיקלטו את הצ׳י (补肾纳气).',
+ pts:['KI3','KI7','BL23','LU9','CV17','KI25'], cf:'Ren Shen Ge Jie San · Du Qi Wan',
+ note:'ההבדל מחסר צ׳י הריאות: כאן הקושי הוא בשאיפה, ויש סימני כליות.'});
+
+S({l:'ki', id:'ki-jing', zh:'肾精不足', py:'Shen Jing Bu Zu', he:'חסר ג׳ינג הכליות',
+ f:'!memory !hair loose_teeth lower_back infertility deaf dizzy tinnitus P_deep P_weak',
+ more:['בילדים: עיכוב בצמיחה ובהתפתחות, סגירה מאוחרת של המרפס','במבוגרים: הזדקנות מוקדמת'],
+ t:'משתנה — לפי הנטייה ליין או ליאנג', p:'עמוק וחלש, ריק',
+ et:'חולשה מולדת, הזדקנות, עודף מין ולידות, מחלה כרונית ממושכת.',
+ pg:'הג׳ינג הוא ה"חומר המולד" שמנהל צמיחה, התפתחות, פוריות והזדקנות. בלי מספיק ג׳ינג — המוח (ים המח) והעצמות מאבדים הזנה.',
+ tp:'להזין את הג׳ינג, הכליות והמח (填精益髓).',
+ pts:['KI3','BL23','GV4','GB39','CV4','BL11'], cf:'Zuo Gui Wan · He Che Da Zao Wan',
+ note:'הג׳ינג קשה מאוד לחידוש. המטרה היא לשמר אותו: שינה, מנוחה ומניעת התשה.'});
+
+S({l:'ki', id:'ki-shui', zh:'肾虚水泛', py:'Shen Xu Shui Fan', he:'חסר כליות עם הצפת מים',
+ f:'!edema !cold_limbs !clear_urine lower_back dyspnea palpitations T_pale !T_wet T_swollen P_deep P_slow',
+ more:['בצקת בקרסוליים שמשאירה גומה','מעט שתן'],
+ t:'חיוורת, נפוחה ורטובה מאוד', p:'עמוק, איטי וחלש',
+ et:'חסר יאנג הכליות מתקדם.',
+ pg:'היאנג אינו מתמיר את המים. הם מצטברים ברגליים, עולים לריאות (קוצר נשימה) וללב (דפיקות) — "המים פולשים ללב".',
+ tp:'לחמם את יאנג הכליות ולהניע מים (温阳利水).',
+ pts:['BL23','KI7','CV9','SP9','GV4','BL22'], cf:'Zhen Wu Tang · Ji Sheng Shen Qi Wan',
+ note:'בצקת עם קוצר נשימה — שלילת אי-ספיקת לב או כליות.', red:true});
+
+S({l:'ki', id:'bl-shi-re', zh:'膀胱湿热', py:'Pang Guang Shi Re', he:'לחות-חום בשלפוחית',
+ f:'!painful_urine !dark_urine cloudy_urine fever thirst lower_back T_yellow_greasy !P_slippery P_rapid',
+ more:['תכיפות ודחיפות','דם בשתן'],
+ t:'ציפוי צהוב דביק בחלק האחורי', p:'חלקלק ומהיר',
+ et:'חשיפה ללחות-חום, מזון חריף ושומני, היגיינה לקויה.',
+ pg:'לחות-חום שוקעת לשלפוחית ומשבשת את "התמרת הצ׳י" שלה — מכאן צריבה, תכיפות ושתן עכור.',
+ tp:'לנקות חום ולפתור לחות מהשלפוחית (清利膀胱湿热).',
+ pts:['CV3','BL28','SP9','SP6','BL63','KI2'], cf:'Ba Zheng San',
+ note:'חום עם כאב מותני חד-צדדי = חשד לדלקת כליה. הפניה.'});
+
+S({l:'ki', id:'bl-han-shi', zh:'膀胱寒湿', py:'Pang Guang Han Shi', he:'קור-לחות בשלפוחית',
+ f:'!cloudy_urine heavy_body clear_urine cold_abd T_thick_white P_slippery P_slow',
+ more:['כבדות בבטן התחתונה ובשופכה','קושי בהתחלת השתנה'],
+ t:'ציפוי לבן דביק בחלק האחורי', p:'חלקלק ואיטי',
+ et:'ישיבה על משטחים קרים ולחים, חשיפה לקור-לחות.',
+ pg:'הקור והלחות מאטים את הזרימה בשלפוחית — כבדות, שתן עכור ולא כאב חד.',
+ tp:'לחמם, לפתור לחות ולהניע שתן.',
+ pts:['CV3','BL28','SP9','BL22','CV9'], cf:'Bi Xie Fen Qing Yin',
+ note:''});
+
+/* ---------- lesson: combined patterns ---------- */
+S({l:'cb', id:'ht-ki', zh:'心肾不交', py:'Xin Shen Bu Jiao', he:'הלב והכליות אינם מתקשרים',
+ f:'!insomnia !palpitations !lower_back night_sweat tinnitus memory dizzy emission five_palm anxiety !T_red T_red_tip T_nocoat !P_thin P_rapid',
+ more:['קושי להירדם וגם התעוררות'],
+ t:'אדומה, קצה אדום יותר, ללא ציפוי', p:'דק ומהיר',
+ et:'חרדה ומתח ממושכים, עבודת יתר, עודף מין.',
+ pg:'מים (כליות) אמורים לעלות ולקרר את האש, אש (לב) אמורה לרדת ולחמם את המים. כשהיין של הכליות חלש — האש של הלב אינה נשלטת, והם "מפסיקים לדבר".',
+ tp:'להזין את יין הכליות, להוריד את אש הלב ולחבר ביניהם (交通心肾).',
+ pts:['HT7','HT6','KI3','KI6','BL15','BL23'], cf:'Huang Lian E Jiao Tang · Tian Wang Bu Xin Dan',
+ note:''});
+
+S({l:'cb', id:'ht-sp', zh:'心脾两虚', py:'Xin Pi Liang Xu', he:'חסר בלב ובטחול',
+ f:'!palpitations !insomnia !poor_appetite fatigue memory anxiety distension loose_stool sallow mens_scanty T_pale T_swollen !P_weak P_thin',
+ more:['עודף מחשבה ודאגה'],
+ t:'חיוורת, דקה או מעט נפוחה', p:'חלש ודק',
+ et:'דאגה ומחשבת יתר, עבודה אינטלקטואלית ממושכת, תזונה לקויה.',
+ pg:'הטחול מייצר את הדם שמזין את הלב. כשהטחול חלש — יש פחות דם ללב, והשן מאבדת עיגון.',
+ tp:'לחזק את הטחול, להזין את דם הלב ולהרגיע את השן (补益心脾).',
+ pts:['HT7','SP6','ST36','BL15','BL20','CV12'], cf:'Gui Pi Tang',
+ note:'שכיח מאוד אצל סטודנטים ואנשים שעובדים מול מסך.'});
+
+S({l:'cb', id:'lr-sp', zh:'肝脾不和', py:'Gan Pi Bu He', he:'חוסר הרמוניה בין הכבד לטחול',
+ f:'!pain_before_bm !distension !irritable hypochondriac loose_stool constipation low_mood poor_appetite fatigue T_red_sides T_pale !P_wiry',
+ more:['חילופי שלשול ועצירות','מחמיר מאוד במתח'],
+ t:'חיוורת, צדדים מעט אדומים', p:'מיתרי, חלש בצד ימין',
+ et:'מתח רגשי יחד עם אכילה לא סדירה.',
+ pg:'הכבד "פולש" לטחול. העץ מדכא את האדמה — בעוד שתפקידו לעזור לה. התוצאה היא תמונה של תסמונת המעי הרגיז.',
+ tp:'לשחרר את הכבד ולחזק את הטחול (疏肝健脾).',
+ pts:['LR13','LR3','ST36','SP6','ST25','PC6'], cf:'Xiao Yao San · Tong Xie Yao Fang',
+ note:'Tong Xie Yao Fang — הפורמולה הקלאסית ל"כאב שמוביל לשלשול".'});
+
+S({l:'cb', id:'lr-st', zh:'肝气犯胃', py:'Gan Qi Fan Wei', he:'צ׳י הכבד תוקף את הקיבה',
+ f:'!acid !belching !epig_pain hypochondriac nausea irritable distension T_red_sides !P_wiry',
+ more:['כאב באפיגסטריום שמקרין לצלעות'],
+ t:'רגילה או צדדים אדומים', p:'מיתרי',
+ et:'כעס ותסכול, אכילה במתח.',
+ pg:'צ׳י הכבד הקפוא פולש לקיבה ומונע ממנה לרדת. הקיבה מורדת — גיהוקים, החזרה וצרבת.',
+ tp:'לשחרר את הכבד ולהרמוני את הקיבה (疏肝和胃).',
+ pts:['LR14','CV12','PC6','ST36','LR3','ST34'], cf:'Si Ni San · Zuo Jin Wan (כשיש חום)',
+ note:''});
+
+S({l:'cb', id:'lr-lu', zh:'肝火犯肺', py:'Gan Huo Fan Fei', he:'אש הכבד פוגעת בריאות',
+ f:'!cough !hypochondriac sputum_blood irritable red_face bitter sputum_yellow T_red T_red_sides !P_wiry P_rapid',
+ more:['שיעול בהתקפים שמחמיר בכעס'],
+ t:'אדומה, צדדים אדומים יותר', p:'מיתרי ומהיר',
+ et:'כעס ממושך.',
+ pg:'בדרך כלל המתכת (ריאות) שולטת בעץ (כבד). כאן העץ חזק מדי ו"מעליב" את המתכת — האש עולה לריאות ומעוררת שיעול.',
+ tp:'לנקות את אש הכבד ולהוריד את צ׳י הריאות (清肝泻肺).',
+ pts:['LR2','LR14','LU5','PC6','CV17','LU7'], cf:'Dai Ge San + Xie Bai San',
+ note:''});
+
+S({l:'cb', id:'lu-ki-yin', zh:'肺肾阴虚', py:'Fei Shen Yin Xu', he:'חסר יין בריאות ובכליות',
+ f:'!sputum_dry !lower_back !night_sweat cough sputum_blood dyspnea_exert five_palm tidal_fever malar emaciation emission T_red T_nocoat !P_thin P_rapid',
+ more:['קול צרוד'],
+ t:'אדומה, ללא ציפוי', p:'דק ומהיר',
+ et:'שיעול כרוני, מחלת ריאות ממושכת, עבודת יתר.',
+ pg:'הריאות הן "האם" של הכליות. יובש כרוני בריאות מרוקן את יין הכליות, וחסר בכליות מונע מהן לשלוח לחות למעלה.',
+ tp:'להזין את יין הריאות והכליות.',
+ pts:['LU9','LU7','KI6','KI3','BL13','BL23','BL43'], cf:'Bai He Gu Jin Tang · Mai Wei Di Huang Wan',
+ note:'LU7 + KI6 — פתיחת ערוץ ה-Ren Mai, צירוף קלאסי ללחלוח הגרון והריאות.'});
+
+S({l:'cb', id:'lr-ki-yin', zh:'肝肾阴虚', py:'Gan Shen Yin Xu', he:'חסר יין בכבד ובכליות',
+ f:'!dizzy !blurred !lower_back tinnitus night_sweat five_palm dry_mouth_night insomnia numbness amenorrhea T_red T_nocoat !P_thin P_rapid',
+ more:['כאבי ראש מתונים בקדקוד או ברקות'],
+ t:'אדומה, ללא ציפוי', p:'דק ומהיר',
+ et:'עבודת יתר, גיל, מחלה כרונית, אובדן דם.',
+ pg:'"הכבד והכליות חולקים מקור אחד". דם הכבד והג׳ינג של הכליות מזינים זה את זה, וכשאחד מתרוקן — השני נגרר.',
+ tp:'להזין את יין הכבד והכליות (滋补肝肾).',
+ pts:['KI3','LR8','SP6','BL18','BL23','KI6'], cf:'Qi Ju Di Huang Wan',
+ note:'הקרקע הנפוצה ביותר ליאנג הכבד העולה.'});
+
+S({l:'cb', id:'sp-ki-yang', zh:'脾肾阳虚', py:'Pi Shen Yang Xu', he:'חסר יאנג בטחול ובכליות',
+ f:'!dawn_diarrhea !cold_limbs !lower_back undigested edema cold_abd limp clear_urine bright_pale T_pale T_wet T_swollen !P_deep P_weak P_slow',
+ more:['שלשול עם שחר — "שלשול חמש בבוקר"'],
+ t:'חיוורת, רטובה, נפוחה', p:'עמוק, חלש, איטי',
+ et:'חסר יאנג הטחול ממושך שגרר את הכליות, או ההפך.',
+ pg:'אש השער של הכליות מחממת את "הסיר" של הטחול. כשהיא דועכת, הטחול אינו מבשל, ובשעת השחר — כשהיאנג אמור להתעורר — הוא נכשל.',
+ tp:'לחמם את הכליות והטחול (温补脾肾).',
+ pts:['GV4','BL23','BL20','ST36','CV4','ST25'], cf:'Si Shen Wan · Fu Zi Li Zhong Wan',
+ note:'מוקסה היא כלי מרכזי.'});
+
+S({l:'cb', id:'lu-sp-qi', zh:'肺脾气虚', py:'Fei Pi Qi Xu', he:'חסר צ׳י בריאות ובטחול',
+ f:'!cough_weak !poor_appetite !loose_stool fatigue sputum_white dyspnea_exert freq_colds weak_voice T_pale T_swollen !P_weak',
+ more:[],
+ t:'חיוורת, נפוחה', p:'חלש',
+ et:'תזונה לקויה, מחלה ממושכת.',
+ pg:'האדמה (טחול) מזינה את המתכת (ריאות). כשהטחול חלש, הריאות מקבלות פחות צ׳י ויותר ליחה.',
+ tp:'לחזק את האדמה כדי להזין את המתכת (培土生金).',
+ pts:['LU9','SP3','ST36','BL13','BL20','CV12'], cf:'Liu Jun Zi Tang · Shen Ling Bai Zhu San',
+ note:'עיקרון הטיפול "לחזק את האדמה כדי לייצר מתכת" — מהדוגמאות הברורות של חמשת המעברים בקליניקה.'});
+
+/* ---------- lesson: six pathogenic factors ---------- */
+S({l:'px', id:'ex-feng', zh:'风邪', py:'Feng Xie', he:'רוח',
+ f:'!wandering_pain !itch cold_aversion headache neck_stiff nasal P_floating',
+ more:['תסמינים שמופיעים ונעלמים במהירות','פגיעה בחלק העליון של הגוף','סרפדת נודדת'],
+ t:'ציפוי דק', p:'צף',
+ et:'"הרוח היא ראש מאה המחלות" — היא נושאת איתה את שאר הפתוגנים.',
+ pg:'הרוח היא תנועה: מהירה, משתנה, עולה. היא פותחת את הנקבוביות ותוקפת קודם את פני השטח ואת הראש.',
+ tp:'לפזר רוח (祛风).',
+ pts:['GB20','GB31','BL12','GV16','LI11','SP10'], cf:'Chuan Xiong Cha Tiao San · Xiao Feng San (בעור)',
+ note:'"כדי לטפל ברוח — טפלו קודם בדם; כשהדם זורם, הרוח נעלמת מעצמה." לכן SP10 בגרד.'});
+
+S({l:'px', id:'ex-han', zh:'寒邪', py:'Han Xie', he:'קור',
+ f:'!cold_aversion !fixed_pain no_sweat cold_limbs clear_urine joint_pain P_tight P_slow T_white',
+ more:['כאב עז שמוקל בחום','התכווצות'],
+ t:'ציפוי לבן', p:'מתוח ואיטי',
+ et:'חשיפה לקור — במזג אוויר, במשקאות, במים.',
+ pg:'הקור מכווץ וקופא. הוא סוגר את הנקבוביות (אין הזעה) ופוגע ביאנג. כשהוא חודר ישירות לאיבר — כאב עז ופתאומי.',
+ tp:'לפזר קור ולחמם.',
+ pts:['ST36','CV12','GV14','BL23','CV8'], cf:'Ma Huang Tang (חיצוני) · Li Zhong Wan (פנימי)',
+ note:''});
+
+S({l:'px', id:'ex-shu', zh:'暑邪', py:'Shu Xie', he:'חום קיץ',
+ f:'!high_fever !sweat_heavy !great_thirst fatigue dark_urine headache heavy_body nausea T_red P_big P_rapid',
+ more:['מופיע רק בקיץ','חום כבד עם בחילה — כשמתחבר ללחות'],
+ t:'אדומה, ציפוי צהוב', p:'גדול, ריק ומהיר',
+ et:'חשיפה לחום קיצוני.',
+ pg:'חום הקיץ עולה, מפזר ומרוקן: הוא פותח את הנקבוביות, מוציא נוזלים, ואיתם צ׳י. לעתים קרובות מגיע יחד עם לחות.',
+ tp:'לנקות חום קיץ, לייצר נוזלים ולחזק צ׳י.',
+ pts:['LI11','PC6','GV14','LI4','ST36','BL40'], cf:'Qing Shu Yi Qi Tang · Xiang Ru San',
+ note:'חום גבוה מאוד עם בלבול = מכת חום, חירום.', red:true});
+
+S({l:'px', id:'ex-shi', zh:'湿邪', py:'Shi Xie', he:'לחות חיצונית',
+ f:'!heavy_body !joint_pain body_ache sticky_mouth distension poor_appetite T_thick_white !P_slippery P_soggy',
+ more:['מפרקים נפוחים וכבדים','מחמיר במזג אוויר לח'],
+ t:'ציפוי עבה ודביק', p:'חלקלק או רך',
+ et:'מגורים במקום לח, עבודה במים, בגדים רטובים.',
+ pg:'הלחות כבדה, דביקה ושוקעת. היא נאחזת במפרקים ובשרירים, ופוגעת ביאנג של הטחול. מחלות לחות נמשכות זמן רב.',
+ tp:'לפזר לחות ולחזק את הטחול.',
+ pts:['SP9','SP6','ST36','ST40','SP5'], cf:'Qiang Huo Sheng Shi Tang · Yi Yi Ren Tang',
+ note:''});
+
+S({l:'px', id:'ex-zao', zh:'燥邪', py:'Zao Xie', he:'יובש חיצוני',
+ f:'!sputum_dry !dry_skin dry_mouth_night sore_throat thirst dry_stool T_dry',
+ more:['שני סוגים: יובש חם (תחילת הסתיו) ויובש קר (סוף הסתיו)'],
+ t:'יבשה', p:'צף ודק',
+ et:'אקלים יבש, מיזוג וחימום.',
+ pg:'היובש תוקף ראשית את הריאות, "האיבר הרך" — דרך האף והפה — ופוגע בנוזלים.',
+ tp:'להרטיב את היובש.',
+ pts:['LU9','KI6','LU7','SP6'], cf:'Sang Xing Tang (חם) · Xing Su San (קר)',
+ note:''});
+
+S({l:'px', id:'ex-huo', zh:'火毒', py:'Huo Du', he:'אש ורעלים',
+ f:'!high_fever !rash red_face great_thirst sore_throat mouth_ulcer restless constipation T_deep_red T_yellow T_dry !P_rapid P_full',
+ more:['זיהומים מוגלתיים, מורסות','נפיחות, אודם וכאב מקומי'],
+ t:'ארגמנית, ציפוי צהוב יבש', p:'מהיר ומלא',
+ et:'כל אחד מהפתוגנים יכול להפוך לאש; גם רגש קיצוני, מזון ותרופות.',
+ pg:'האש היא הצורה הקיצונית של החום. היא עולה, שורפת נוזלים, מניעה את הדם לדימום, ויוצרת מוגלה.',
+ tp:'לנקות חום ולהוציא רעלים (清热解毒).',
+ pts:['LI11','LI4','GV14','BL40','LU11','SP10'], cf:'Huang Lian Jie Du Tang · Wu Wei Xiao Du Yin',
+ note:'זיהום עם חום גבוה מחייב הערכה רפואית.'});
+
+/* ---------- lesson: six stages ---------- */
+S({l:'lj', id:'ty-zhongfeng', zh:'太阳中风', py:'Tai Yang Zhong Feng', he:'טאי-יאנג — פגיעת רוח',
+ f:'!cold_aversion !sp_sweat fever headache neck_stiff nasal T_white !P_floating P_weak',
+ more:['רתיעה מרוח','הזעה שאינה מביאה הקלה'],
+ t:'ציפוי לבן דק', p:'צף ורפוי',
+ et:'רוח-קור שפוגשת ווי צ׳י חלש — "תסמונת הבסיס של מצב חסר".',
+ pg:'הנקבוביות פתוחות: הווי צ׳י (יאנג) והיינג צ׳י (יין) אינם מתואמים. יש הזעה — אבל היא לא מגרשת את הפתוגן.',
+ tp:'לשחרר את השרירים ולתאם בין היינג לווי (调和营卫).',
+ pts:['LU7','LI4','BL12','GB20','GV14'], cf:'Gui Zhi Tang',
+ note:'ההבחנה בשאנג האן לון: הזעה — Gui Zhi Tang. אין הזעה — Ma Huang Tang.'});
+
+S({l:'lj', id:'ty-shanghan', zh:'太阳伤寒', py:'Tai Yang Shang Han', he:'טאי-יאנג — פגיעת קור',
+ f:'!cold_aversion !no_sweat !body_ache fever headache neck_stiff wheeze T_white !P_floating !P_tight',
+ more:['כאבי גוף ועצמות'],
+ t:'ציפוי לבן דק', p:'צף ומתוח',
+ et:'קור חזק שפוגש ווי צ׳י חזק — "מצב עודף".',
+ pg:'הקור סוגר את הנקבוביות לגמרי. הווי צ׳י נאבק בחוזקה, ואין לו מוצא — מכאן אין זיעה, כאבים וקוצר נשימה.',
+ tp:'לפתוח את פני השטח ולהזיע (发汗解表).',
+ pts:['LU7','LI4','BL12','BL13','GV14'], cf:'Ma Huang Tang',
+ note:''});
+
+S({l:'lj', id:'ym-jing', zh:'阳明经证', py:'Yang Ming Jing Zheng', he:'יאנג-מינג — ערוץ',
+ f:'!high_fever !great_thirst !sweat_heavy heat_aversion red_face restless T_yellow T_dry !P_big P_rapid',
+ more:['"ארבעת הגדולים": חום, צמא, זיעה, דופק גדול'],
+ t:'אדומה, ציפוי צהוב ויבש', p:'גדול ושוטף',
+ et:'הפתוגן חדר פנימה והפך לחום בקיבה ובמעיים.',
+ pg:'החום מילא את ערוץ יאנג-מינג אבל עדיין "לא נקשר" לצואה במעיים — הוא מפוזר, לא חסום.',
+ tp:'לנקות חום ולייצר נוזלים.',
+ pts:['LI11','LI4','ST44','GV14','ST43'], cf:'Bai Hu Tang',
+ note:''});
+
+S({l:'lj', id:'ym-fu', zh:'阳明腑证', py:'Yang Ming Fu Zheng', he:'יאנג-מינג — איבר',
+ f:'!constipation !abd_full !tidal_fever sweat_heavy restless T_yellow T_dry !P_deep P_full',
+ more:['חום שמגיע לשיא אחר הצהריים','זיעה בידיים וברגליים','במקרה קשה — דליריום'],
+ t:'ציפוי צהוב עבה, יבש, לעתים חום-שחור', p:'עמוק ומלא',
+ et:'המשך של יאנג-מינג ערוץ.',
+ pg:'החום נקשר לצואה היבשה במעיים — יש חסימה ממשית. הבטן קשה ורגישה.',
+ tp:'לנקז כלפי מטה (攻下).',
+ pts:['ST25','ST37','TE6','LI11','SP15'], cf:'Da Cheng Qi Tang · Tiao Wei Cheng Qi Tang',
+ note:'בטן קשה וכואבת עם חום — שלילת בטן חריפה.', red:true});
+
+S({l:'lj', id:'sy', zh:'少阳证', py:'Shao Yang Zheng', he:'שאו-יאנג',
+ f:'!alt_chills !bitter !hypochondriac dry_mouth_night dizzy nausea poor_appetite irritable T_white !P_wiry',
+ more:['גרון יבש','"חצי חיצוני, חצי פנימי"'],
+ t:'ציפוי לבן דק, לעתים בצד אחד בלבד', p:'מיתרי',
+ et:'פתוגן שלא גורש מטאי-יאנג וגם לא חדר ליאנג-מינג.',
+ pg:'הפתוגן נלכד ב"ציר" — בין החוץ לפנים. הוא נע הלוך וחזור: כשהוא יוצא — קור; כשהוא נכנס — חום.',
+ tp:'לפשר ולשחרר את שאו-יאנג (和解少阳).',
+ pts:['TE5','GB41','GB34','PC6','GB20'], cf:'Xiao Chai Hu Tang',
+ note:'Xiao Chai Hu Tang — מהפורמולות הנפוצות ביותר בקליניקה, גם מחוץ למחלות חום.'});
+
+S({l:'lj', id:'tyin', zh:'太阴证', py:'Tai Yin Zheng', he:'טאי-יין',
+ f:'!cold_abd !loose_stool distension no_thirst poor_appetite nausea T_pale T_white !P_deep P_weak P_slow',
+ more:['כאב בטן שבא והולך'],
+ t:'חיוורת, ציפוי לבן', p:'עמוק, חלש ואיטי',
+ et:'מעבר לשלבי היין — הפתוגן פגע בטחול.',
+ pg:'זה השלב הראשון של היין: קור וחסר בטחול. אין עוד חום — הגוף כבר אינו נאבק.',
+ tp:'לחמם את המרכז ולפזר קור.',
+ pts:['ST36','CV12','SP3','BL20','CV6'], cf:'Li Zhong Wan',
+ note:''});
+
+S({l:'lj', id:'shy-han', zh:'少阴寒化', py:'Shao Yin Han Hua', he:'שאו-יין — התמרה לקור',
+ f:'!limp !cold_limbs !cold_aversion undigested clear_urine no_thirst T_pale T_wet !P_deep P_weak P_thin',
+ more:['"רק רוצה לישון"'],
+ t:'חיוורת ורטובה', p:'עמוק, דק ומאוד חלש',
+ et:'חסר יאנג של הלב והכליות.',
+ pg:'השלב החמור של היין: היאנג של הלב והכליות קורס. המטופל שוכב, קר, ללא אנרגיה.',
+ tp:'להשיב ולחמם את היאנג.',
+ pts:['GV4','CV4','CV8','KI3','BL23'], cf:'Si Ni Tang · Fu Zi Tang',
+ note:'מצב חמור — בדרך כלל אצל קשישים או חולים מאוד. הפניה.', red:true});
+
+S({l:'lj', id:'shy-re', zh:'少阴热化', py:'Shao Yin Re Hua', he:'שאו-יין — התמרה לחום',
+ f:'!insomnia !restless dry_mouth_night sore_throat five_palm dark_urine !T_red T_nocoat !P_thin P_rapid',
+ more:[],
+ t:'אדומה, ללא ציפוי', p:'דק ומהיר',
+ et:'חסר יין הכליות בגוף שנוטה לחום.',
+ pg:'אותו מקום — לב וכליות — אבל בכיוון ההפוך: היין מתרוקן ואש הלב משתחררת. זו גם תמונת "הלב והכליות אינם מתקשרים".',
+ tp:'להזין יין ולנקות חום.',
+ pts:['KI3','KI6','HT7','HT6','SP6'], cf:'Huang Lian E Jiao Tang',
+ note:''});
+
+S({l:'lj', id:'jy', zh:'厥阴证', py:'Jue Yin Zheng', he:'ג׳ואה-יין',
+ f:'!cold_limbs !hunger thirst epig_burn nausea poor_appetite P_wiry',
+ more:['חום בחלק העליון, קור בחלק התחתון','רעב ללא יכולת לאכול','הקאת תולעים — בטקסט הקלאסי'],
+ t:'משתנה', p:'מיתרי ודק',
+ et:'השלב העמוק ביותר של היין.',
+ pg:'קור וחום מעורבבים ומנותקים זה מזה. היין והיאנג מפסיקים להתחבר — חום מלמעלה, קור מלמטה.',
+ tp:'לחמם ולקרר בו-זמנית, ולהשיב את הקשר.',
+ pts:['LR3','PC6','CV12','ST36','LR14'], cf:'Wu Mei Wan',
+ note:''});
+
+/* ---------- lesson: four levels ---------- */
+S({l:'wq', id:'wei', zh:'卫分证', py:'Wei Fen', he:'רמת הווי',
+ f:'!fever !sore_throat cold_aversion headache thirst cough T_red_tip !P_floating !P_rapid',
+ more:['רתיעה קלה מקור, חום בולט'],
+ t:'קצה וצדדים אדומים, ציפוי לבן-צהוב דק', p:'צף ומהיר',
+ et:'רוח-חום שנכנסת דרך האף והפה — "חום מגפתי".',
+ pg:'השכבה החיצונית. זו אותה תמונה כמו רוח-חום תוקפת את הריאות, ומכאן מחלת החום עלולה להעמיק.',
+ tp:'לשחרר את פני השטח בעזרת צמחים קרירים וחריפים (辛凉解表).',
+ pts:['LI4','LI11','LU11','TE5','GV14','LU7'], cf:'Yin Qiao San · Sang Ju Yin',
+ note:'בשיטת ארבע הרמות — נלמדת מבית הספר של מחלות החום (温病), שהתפתח ב-1600–1800.'});
+
+S({l:'wq', id:'qi-fen', zh:'气分证', py:'Qi Fen', he:'רמת הצ׳י',
+ f:'!high_fever !heat_aversion !great_thirst sweat_heavy red_face dark_urine constipation cough sputum_yellow T_red T_yellow !P_big P_rapid',
+ more:['אין יותר רתיעה מקור'],
+ t:'אדומה, ציפוי צהוב', p:'גדול ומהיר, או חלקלק ומהיר',
+ et:'החום עבר את הווי ונכנס לאיברים — ריאות, קיבה, מעיים, כיס המרה.',
+ pg:'זה שלב המאבק המלא: הגוף עדיין חזק ונלחם בכל כוחו. התמונה המדויקת תלויה באיבר: ריאות (שיעול וליחה צהובה), קיבה (צמא וזיעה), מעיים (עצירות).',
+ tp:'לנקות חום ברמת הצ׳י (清气分热).',
+ pts:['LI11','LI4','ST44','LU5','ST25','GV14'], cf:'Bai Hu Tang · Ma Xing Shi Gan Tang · Da Cheng Qi Tang',
+ note:''});
+
+S({l:'wq', id:'ying', zh:'营分证', py:'Ying Fen', he:'רמת היינג',
+ f:'!restless !tidal_fever insomnia rash dry_mouth_night !T_deep_red T_nocoat !P_thin P_rapid',
+ more:['חום שמחמיר בלילה','פריחה עדינה שמתחילה להופיע','צמא מועט — החום כבר עמוק','דליריום לסירוגין'],
+ t:'ארגמנית, ללא ציפוי', p:'דק ומהיר',
+ et:'החום חדר עמוק יותר, אל השכבה שמזינה את הדם.',
+ pg:'החום פוגע ביין ובשן. הלשון הופכת ארגמנית — הסימן שהחום עבר את רמת הצ׳י. אין עוד צמא רב, כי החום "מאדה" יין מבפנים.',
+ tp:'לנקות את היינג ולהעביר את החום חזרה לרמת הצ׳י (透营转气).',
+ pts:['PC3','PC9','HT9','KI6','SP6','BL40'], cf:'Qing Ying Tang',
+ note:'מצב חמור — מחלה זיהומית מתקדמת. הפניה רפואית.', red:true});
+
+S({l:'wq', id:'xue-fen', zh:'血分证', py:'Xue Fen', he:'רמת הדם',
+ f:'!bleeding !rash !restless nosebleed mania convulsions !T_deep_red T_purple !P_thin P_rapid',
+ more:['פריחה כהה ובולטת, דימום מכל פתח','פרכוסים — חום מעורר רוח'],
+ t:'ארגמנית כהה, סגולה', p:'דק ומהיר',
+ et:'השלב העמוק ביותר של מחלת חום.',
+ pg:'החום מניע את הדם מחוץ לכליו ומעורר רוח פנימית. "כשמגיעים לדם — יש להניע אותו ולקרר אותו".',
+ tp:'לקרר את הדם, לפזר קיפאון ולעצור דימום (凉血散血).',
+ pts:['SP10','BL40','LI11','BL17','LR3','GV20'], cf:'Xi Jiao Di Huang Tang (בגרסה מודרנית)',
+ note:'חירום רפואי. כאן לצורך הבנה ולזיהוי מוקדם.', red:true});
+
+/* ---------- lesson: San Jiao ---------- */
+S({l:'sj', id:'sj-up', zh:'上焦病证', py:'Shang Jiao', he:'המחמם העליון',
+ f:'!fever !cough cold_aversion sore_throat headache thirst T_red_tip !P_floating P_rapid',
+ more:['בשלב מתקדם: דליריום, חוסר הכרה — "החום חודר לפריקרד"'],
+ t:'קצה אדום; ארגמנית בפריקרד', p:'צף ומהיר',
+ et:'מחלת חום בתחילתה — ריאות ופריקרד.',
+ pg:'"מחלות חום מתחילות במחמם העליון." הריאות נפגעות ראשונות. אם החום עובר ישירות לפריקרד — השן מתערפלת.',
+ tp:'לשחרר ולנקות במחמם העליון; בפריקרד — לפתוח את הפתחים.',
+ pts:['LU5','LU11','LI4','LI11','PC9','PC6'], cf:'Yin Qiao San · An Gong Niu Huang Wan (פריקרד)',
+ note:''});
+
+S({l:'sj', id:'sj-mid-heat', zh:'中焦燥热', py:'Zhong Jiao Zao Re', he:'המחמם האמצעי — חום ויובש',
+ f:'!high_fever !constipation great_thirst red_face dry_mouth_night T_yellow T_dry P_deep P_full',
+ more:[],
+ t:'ציפוי צהוב יבש', p:'עמוק ומלא',
+ et:'החום ירד מהמחמם העליון לקיבה ולמעיים.',
+ pg:'מקביל ליאנג-מינג: החום מייבש את הקיבה והמעיים.',
+ tp:'לנקות חום, להרטיב ולהניע כלפי מטה.',
+ pts:['ST25','ST44','TE6','LI11','ST37'], cf:'Zeng Ye Cheng Qi Tang',
+ note:''});
+
+S({l:'sj', id:'sj-mid-damp', zh:'中焦湿热', py:'Zhong Jiao Shi Re', he:'המחמם האמצעי — לחות-חום',
+ f:'!heavy_body !distension fever nausea sticky_mouth no_thirst loose_stool !T_yellow_greasy !P_slippery P_soggy',
+ more:['חום שאינו יורד אחרי הזעה — "חום כלוא"'],
+ t:'ציפוי צהוב-לבן דביק', p:'רך או חלקלק',
+ et:'מחלת לחות-חום — טאי-יין במחמם האמצעי.',
+ pg:'הלחות עוטפת את החום ולכן הוא אינו פורץ החוצה. התמונה אטית ומתמשכת.',
+ tp:'לפתור לחות ולנקות חום — עם דגש על פתיחה ולא קירור כבד.',
+ pts:['SP9','CV12','ST36','SP6','LI11'], cf:'San Ren Tang · Huo Po Xia Ling Tang',
+ note:''});
+
+S({l:'sj', id:'sj-low', zh:'下焦病证', py:'Xia Jiao', he:'המחמם התחתון',
+ f:'!five_palm !tidal_fever tremor dry_mouth_night deaf restless !T_deep_red T_nocoat T_dry !P_thin P_weak',
+ more:['רעד באצבעות — רוח מחסר יין','חום ממושך ונמוך בסוף מחלה'],
+ t:'ארגמנית, יבשה, ללא ציפוי', p:'דק וחלש',
+ et:'שלב מאוחר של מחלת חום שרוקנה את יין הכבד והכליות.',
+ pg:'החום שרף את היין העמוק. הכבד אינו מוזן ומתעוררת רוח פנימית.',
+ tp:'להזין יין ולכבות רוח (滋阴熄风).',
+ pts:['KI3','KI6','LR3','LR8','SP6'], cf:'Jia Jian Fu Mai Tang · Da Ding Feng Zhu',
+ note:'שלב ההחלמה אחרי מחלת חום ממושכת — שכיח גם אחרי זיהומים קשים.'});
+
+/* ================= POINTS — WHO code · pinyin · location ================= */
+const PTS = {
+ LU1:['Zhongfu','בחזה, 6 צון לרוחב קו האמצע, בגובה המרווח הבין-צלעי הראשון, 1 צון מתחת ל-LU2'],
+ LU5:['Chize','בקפל המרפק, בצד הרדיאלי של גיד הדו-ראשי'],
+ LU7:['Lieque','1.5 צון מעל קפל שורש כף היד, מעל הזיז הסטילואידי של הרדיוס'],
+ LU9:['Taiyuan','בקפל שורש כף היד, בצד הרדיאלי של עורק הרדיאלי'],
+ LU11:['Shaoshang','בצד הרדיאלי של האגודל, 0.1 צון מזווית הציפורן'],
+ LI4:['Hegu','בגב כף היד, בין המסרק הראשון לשני, באמצע המסרק השני'],
+ LI11:['Quchi','בקצה הלטרלי של קפל המרפק כשהמרפק כפוף, באמצע בין LU5 לאפיקונדיל הלטרלי'],
+ ST21:['Liangmen','4 צון מעל הטבור, 2 צון לרוחב קו האמצע'],
+ ST25:['Tianshu','2 צון לרוחב הטבור'],
+ ST28:['Shuidao','3 צון מתחת לטבור, 2 צון לרוחב קו האמצע'],
+ ST29:['Guilai','4 צון מתחת לטבור, 2 צון לרוחב קו האמצע'],
+ ST34:['Liangqiu','2 צון מעל הקצה העליון-לטרלי של הפיקה'],
+ ST36:['Zusanli','3 צון מתחת ל-ST35, רוחב אצבע אחת לרוחב השוליים הקדמיים של הטיביה'],
+ ST37:['Shangjuxu','6 צון מתחת ל-ST35, רוחב אצבע לרוחב הטיביה'],
+ ST40:['Fenglong','8 צון מעל הקרסול הלטרלי, 2 רוחבי אצבע לרוחב השוליים הקדמיים של הטיביה'],
+ ST43:['Xiangu','בגב כף הרגל, בשקע שבין המסרק השני לשלישי, פרוקסימלית למפרק'],
+ ST44:['Neiting','בגב כף הרגל, בקצה קפל העור שבין האצבע השנייה לשלישית'],
+ SP1:['Yinbai','בצד המדיאלי של הבוהן, 0.1 צון מזווית הציפורן'],
+ SP3:['Taibai','בצד המדיאלי של כף הרגל, פרוקסימלית ומתחת לראש המסרק הראשון, בגבול העור הבהיר-כהה'],
+ SP4:['Gongsun','בצד המדיאלי של כף הרגל, בשקע שמתחת לבסיס המסרק הראשון'],
+ SP5:['Shangqiu','בשקע שמלפנים ומתחת לקרסול המדיאלי'],
+ SP6:['Sanyinjiao','3 צון מעל קצה הקרסול המדיאלי, מאחורי השוליים המדיאליים של הטיביה'],
+ SP9:['Yinlingquan','בשקע שמתחת לקונדיל המדיאלי של הטיביה'],
+ SP10:['Xuehai','2 צון מעל הקצה העליון-מדיאלי של הפיקה, על בליטת שריר הוואסטוס המדיאלי'],
+ SP15:['Daheng','4 צון לרוחב הטבור'],
+ HT5:['Tongli','1 צון מעל קפל שורש כף היד, בצד הרדיאלי של גיד ה-FCU'],
+ HT6:['Yinxi','0.5 צון מעל קפל שורש כף היד, בצד הרדיאלי של גיד ה-FCU'],
+ HT7:['Shenmen','בקפל שורש כף היד, בצד הרדיאלי של גיד ה-FCU'],
+ HT8:['Shaofu','בכף היד, בין המסרק הרביעי לחמישי, היכן שקצה הזרת נוגע באגרוף קפוץ'],
+ HT9:['Shaochong','בצד הרדיאלי של הזרת, 0.1 צון מזווית הציפורן'],
+ SI2:['Qiangu','בצד האולנרי של הזרת, דיסטלית למפרק המסרק-גליל, בגבול העור הבהיר-כהה'],
+ SI5:['Yanggu','בצד האולנרי של שורש כף היד, בשקע שבין הזיז הסטילואידי של האולנה לעצם הטריקוטרל'],
+ BL11:['Dazhu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T1'],
+ BL12:['Fengmen','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T2'],
+ BL13:['Feishu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T3'],
+ BL14:['Jueyinshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T4'],
+ BL15:['Xinshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T5'],
+ BL17:['Geshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T7'],
+ BL18:['Ganshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T9'],
+ BL19:['Danshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T10'],
+ BL20:['Pishu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T11'],
+ BL21:['Weishu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי T12'],
+ BL22:['Sanjiaoshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי L1'],
+ BL23:['Shenshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי L2'],
+ BL25:['Dachangshu','1.5 צון לרוחב הקצה התחתון של הזיז השדרתי L4'],
+ BL28:['Pangguangshu','1.5 צון לרוחב קו האמצע, בגובה הנקב הסקרלי השני'],
+ BL32:['Ciliao','בנקב הסקרלי השני'],
+ BL40:['Weizhong','באמצע קפל הברך האחורי'],
+ BL43:['Gaohuangshu','3 צון לרוחב הקצה התחתון של הזיז השדרתי T4'],
+ BL63:['Jinmen','בצד הלטרלי של כף הרגל, בשקע שמתחת לעצם הקובואידית, מלפנים ומתחת ל-BL62'],
+ KI2:['Rangu','בצד המדיאלי של כף הרגל, בשקע שמתחת לפקעת העצם הנביקולרית'],
+ KI3:['Taixi','בשקע שבין הקרסול המדיאלי לגיד אכילס, בגובה קצה הקרסול'],
+ KI6:['Zhaohai','1 צון מתחת לקצה הקרסול המדיאלי'],
+ KI7:['Fuliu','2 צון מעל KI3, בשוליים הקדמיים של גיד אכילס'],
+ KI10:['Yingu','בצד המדיאלי של קפל הברך האחורי, בין הגידים סמיטנדינוזוס וסמימברנוזוס'],
+ KI25:['Shencang','במרווח הבין-צלעי השני, 2 צון לרוחב קו האמצע'],
+ PC3:['Quze','בקפל המרפק, בצד האולנרי של גיד הדו-ראשי'],
+ PC4:['Ximen','5 צון מעל קפל שורש כף היד, בין גידי ה-PL וה-FCR'],
+ PC5:['Jianshi','3 צון מעל קפל שורש כף היד, בין גידי ה-PL וה-FCR'],
+ PC6:['Neiguan','2 צון מעל קפל שורש כף היד, בין גידי ה-PL וה-FCR'],
+ PC7:['Daling','באמצע קפל שורש כף היד, בין גידי ה-PL וה-FCR'],
+ PC8:['Laogong','במרכז כף היד, בין המסרק השני לשלישי, היכן שקצה האמה נוגע באגרוף קפוץ'],
+ PC9:['Zhongchong','במרכז קצה האצבע האמצעית'],
+ TE5:['Waiguan','2 צון מעל קפל שורש כף היד בגב היד, בין הרדיוס לאולנה'],
+ TE6:['Zhigou','3 צון מעל קפל שורש כף היד בגב היד, בין הרדיוס לאולנה'],
+ GB20:['Fengchi','מתחת לעצם העורף, בשקע שבין השריר הסטרנו-קלידו-מסטואידי לטרפזיוס'],
+ GB24:['Riyue','במרווח הבין-צלעי השביעי, 4 צון לרוחב קו האמצע'],
+ GB31:['Fengshi','בצד הלטרלי של הירך, 7 צון מעל קפל הברך — היכן שקצה האמה נוגע בעמידה'],
+ GB34:['Yanglingquan','בשקע שמלפנים ומתחת לראש הפיבולה'],
+ GB39:['Xuanzhong','3 צון מעל קצה הקרסול הלטרלי, בשוליים הקדמיים של הפיבולה'],
+ GB40:['Qiuxu','בשקע שמלפנים ומתחת לקרסול הלטרלי, לרוחב גיד ה-EDL'],
+ GB41:['Zulinqi','בגב כף הרגל, דיסטלית למפגש המסרק הרביעי והחמישי, לרוחב גיד האצבע הקטנה'],
+ GB43:['Xiaxi','בגב כף הרגל, בין האצבע הרביעית לחמישית, בקצה קפל העור'],
+ LR1:['Dadun','בצד הלטרלי של הבוהן, 0.1 צון מזווית הציפורן'],
+ LR2:['Xingjian','בגב כף הרגל, בין הבוהן לאצבע השנייה, בקצה קפל העור'],
+ LR3:['Taichong','בגב כף הרגל, בשקע שלפני מפגש המסרק הראשון והשני'],
+ LR5:['Ligou','5 צון מעל קצה הקרסול המדיאלי, במרכז המשטח המדיאלי של הטיביה'],
+ LR8:['Ququan','בקצה המדיאלי של קפל הברך כשהברך כפופה, מלפנים לגידי הסמימברנוזוס והסמיטנדינוזוס'],
+ LR13:['Zhangmen','בקצה החופשי של הצלע ה-11'],
+ LR14:['Qimen','במרווח הבין-צלעי השישי, 4 צון לרוחב קו האמצע'],
+ CV3:['Zhongji','4 צון מתחת לטבור, על קו האמצע'],
+ CV4:['Guanyuan','3 צון מתחת לטבור, על קו האמצע'],
+ CV6:['Qihai','1.5 צון מתחת לטבור, על קו האמצע'],
+ CV8:['Shenque','במרכז הטבור — מוקסה בלבד, אסור לדקור'],
+ CV9:['Shuifen','1 צון מעל הטבור, על קו האמצע'],
+ CV10:['Xiawan','2 צון מעל הטבור, על קו האמצע'],
+ CV12:['Zhongwan','4 צון מעל הטבור, על קו האמצע'],
+ CV14:['Juque','6 צון מעל הטבור, על קו האמצע'],
+ CV17:['Danzhong','על עצם החזה, בגובה המרווח הבין-צלעי הרביעי, בין הפטמות'],
+ GV4:['Mingmen','מתחת לזיז השדרתי L2'],
+ GV14:['Dazhui','מתחת לזיז השדרתי C7'],
+ GV16:['Fengfu','1 צון מעל קו השיער האחורי, מתחת לבליטה העורפית החיצונית'],
+ GV20:['Baihui','5 צון מעל קו השיער הקדמי, באמצע הקו המחבר את קודקודי האוזניים'],
+ GV26:['Shuigou','בפנים, בצומת השליש העליון והאמצעי של הפילטרום'],
+ 'EX-HN5':['Taiyang','ברקה, בשקע שנמצא כרוחב אצבע אחורית לנקודת האמצע בין קצה הגבה לזווית העין החיצונית']
+};
+
+/* ================= TIZON FORMULA MAPPING =================
+   Filled ONLY from the Tizon index (drzilber.com/page/indexfc or the
+   uploaded index document). Never inferred. Key = syndrome id.
+   Example:  'sp-qi-xu': ['39 Basic'],                                   */
+const TIZON = {
+};
+
+/* ================= LESSONS ================= */
+const LESSONS = [
+{ id:'intro', k:'פתיחה', title:'מהו סינדרום', cn:'辨证 · Bian Zheng', body:`
+<p class="lead">ברפואה הסינית לא מטפלים במחלה — מטפלים בתבנית. שני אנשים עם אותה מיגרנה יכולים לקבל טיפולים הפוכים, ושני אנשים עם מחלות שונות לגמרי יכולים לקבל את אותו טיפול. התבנית הזו נקראת <strong>סינדרום</strong> (证 Zheng).</p>
+<h3>מחלה מול סינדרום</h3>
+<p><strong>מחלה</strong> (病 Bing) היא שם לתהליך — "שיעול", "כאב ראש", "נדודי שינה". <strong>סינדרום</strong> הוא תיאור של מצב הגוף <em>ברגע הזה</em>: היכן הבעיה, מה טבעה, ואיזה כוח פועל. "同病异治，异病同治" — מחלה אחת, טיפולים שונים; מחלות שונות, טיפול אחד.</p>
+<div class="two">
+ <div class="box"><div class="box-t">מחלה אחת · שני סינדרומים</div>נדודי שינה עם קושי להירדם, חרדה ולשון חיוורת = <strong>חסר דם הלב</strong>. נדודי שינה עם התעוררות, הזעת לילה ולשון אדומה ללא ציפוי = <strong>חסר יין הלב</strong>. הטיפול שונה לגמרי.</div>
+ <div class="box"><div class="box-t">שתי מחלות · סינדרום אחד</div>שלשול כרוני, צניחת רחם וטחורים — שלוש מחלות. כשכולן נובעות מ<strong>שקיעת צ׳י הטחול</strong>, אותו עיקרון טיפול (להרים את הצ׳י) מתאים לכולן.</div>
+</div>
+<h3>ארבע שיטות האבחון</h3>
+<p>הסינדרום נבנה מהמידע שנאסף בארבע השיטות הקלאסיות (四诊):</p>
+<table><thead><tr><th>שיטה</th><th>מה בודקים</th><th>מה זה נותן</th></tr></thead><tbody>
+<tr><td><strong>הסתכלות</strong> 望</td><td>גוון פנים, מבנה גוף, תנועה, <strong>לשון</strong></td><td>הלשון היא המראה הכי יציבה — משקפת את המצב לאורך שבועות</td></tr>
+<tr><td><strong>הקשבה והרחה</strong> 闻</td><td>קול, נשימה, שיעול, ריחות</td><td>עוצמה (עודף/חסר), חום</td></tr>
+<tr><td><strong>תשאול</strong> 问</td><td>עשר השאלות: חום/קור, זיעה, ראש, גוף, צואה ושתן, תיאבון, שינה, צמא, חזה, וסת</td><td>רוב המידע</td></tr>
+<tr><td><strong>מישוש</strong> 切</td><td><strong>דופק</strong>, בטן, נקודות רגישות</td><td>הדופק משקף את המצב עכשיו — הוא משתנה מהר</td></tr>
+</tbody></table>
+<h3>שבע שיטות הבחנה — וכיצד הן משתלבות</h3>
+<p>אין שיטה אחת. כל שיטה מתאימה לסוג אחר של מצב, והקורס בנוי לפיהן:</p>
+<table><thead><tr><th>שיטה</th><th>מתאימה ל</th><th>שיעור</th></tr></thead><tbody>
+<tr><td>שמונת העקרונות 八纲</td><td>כל מצב — המסגרת הבסיסית</td><td>1</td></tr>
+<tr><td>צ׳י, דם ונוזלים 气血津液</td><td>החומרים שבגוף — מה חסר, מה עומד</td><td>2</td></tr>
+<tr><td>איברים פנימיים 脏腑</td><td>מחלות פנימיות וכרוניות — השיטה המרכזית בקליניקה</td><td>3–8</td></tr>
+<tr><td>ששת הגורמים הפתוגניים 六淫</td><td>מה תקף מבחוץ</td><td>9</td></tr>
+<tr><td>ששת השלבים 六经</td><td>מחלות קור חיצוניות — שאנג האן לון</td><td>10</td></tr>
+<tr><td>ארבע הרמות 卫气营血</td><td>מחלות חום וזיהומיות — וון בינג</td><td>11</td></tr>
+<tr><td>שלושת המחממים 三焦</td><td>מחלות חום ולחות-חום</td><td>12</td></tr>
+</tbody></table>
+<h3>איך קוראים כרטיס סינדרום</h3>
+<p>כל סינדרום בקורס בנוי באותו מבנה:</p>
+<ul>
+<li><strong>סימנים</strong> — הסימנים המודגשים עם <span class="kdot"></span> הם <strong>סימני המפתח</strong>. בלעדיהם קשה לאבחן את הסינדרום. השאר תומכים.</li>
+<li><strong>לשון ודופק</strong> — בשני תאים נפרדים, כי הם האישור האובייקטיבי.</li>
+<li><strong>אטיולוגיה</strong> — מה גורם לזה. <strong>פתוגנזה</strong> — איך זה קורה בגוף: למה כל סימן מופיע.</li>
+<li><strong>עקרון טיפול</strong> — המשפט שמכתיב את הכול. ממנו נגזרים הנקודות והצמחים.</li>
+<li><strong>נקודות</strong> — בקוד WHO ובשם פיניין. מעבר עם העכבר מראה את המיקום בצון; המפתח המלא בנספח ב.</li>
+<li><strong>פורמולה קלאסית</strong> — לייחוס בלבד. <strong>פורמולת טיזון</strong> — מוצגת רק כשהשיוך מגיע מאינדקס הפורמולות.</li>
+</ul>
+<div class="box warn"><div class="box-t">לפני הכול</div>האבחנה הסינית אינה מחליפה אבחנה רפואית. סינדרומים שמסומנים <span class="redtag">דגל אדום</span> מתארים מצבים שמחייבים הפניה — הם בקורס כדי שתזהו אותם, לא כדי שתטפלו בהם לבד.</div>
+`},
+
+{ id:'ba', k:'שיעור 1', title:'שמונת העקרונות', cn:'八纲 · Ba Gang', body:`
+<p class="lead">ארבעה צמדים שעונים על ארבע שאלות: <strong>איפה</strong> (חיצוני/פנימי), <strong>מה הטבע</strong> (קור/חום), <strong>מה הכוח</strong> (חסר/עודף), ו<strong>הסיכום</strong> (יין/יאנג). כל סינדרום אחר בקורס הוא פירוט של אחת מהתשובות האלה.</p>
+<h3>ארבעת הצמדים</h3>
+<table><thead><tr><th>שאלה</th><th>צמד</th><th>סימן מבחין</th></tr></thead><tbody>
+<tr><td>איפה?</td><td>חיצוני ↔ פנימי</td><td>רתיעה מקור <em>יחד עם</em> חום, דופק צף = חיצוני</td></tr>
+<tr><td>מה הטבע?</td><td>קור ↔ חום</td><td>צמא, צבע שתן, צבע לשון וציפוי, קצב הדופק</td></tr>
+<tr><td>מה הכוח?</td><td>חסר ↔ עודף</td><td>עוצמת הדופק, תגובה ללחץ, משך המחלה</td></tr>
+<tr><td>סיכום</td><td>יין ↔ יאנג</td><td>יין = פנימי, קור, חסר. יאנג = חיצוני, חום, עודף</td></tr>
+</tbody></table>
+<h3>חסר מול עודף — הטבלה שכדאי לזכור</h3>
+<table><thead><tr><th></th><th>חסר 虚</th><th>עודף 实</th></tr></thead><tbody>
+<tr><td>הופעה</td><td>הדרגתית, כרונית</td><td>חדה</td></tr>
+<tr><td>כאב</td><td>עמום, מוקל בלחץ</td><td>חד, מחמיר בלחץ</td></tr>
+<tr><td>קול ונשימה</td><td>חלשים</td><td>חזקים</td></tr>
+<tr><td>לשון</td><td>חיוורת או ללא ציפוי</td><td>ציפוי עבה</td></tr>
+<tr><td>דופק</td><td>חלש, ריק, דק</td><td>מלא, חזק</td></tr>
+<tr><td>עיקרון</td><td>לחזק 补</td><td>לנקז 泻</td></tr>
+</tbody></table>
+<h3>כשהתמונה מטעה</h3>
+<p>לפעמים הקור והחום "מתחפשים". <strong>חום אמיתי — קור מדומה</strong>: חום קיצוני בפנים חוסם את היאנג מלהגיע לגפיים, ולכן הידיים קרות — אבל הלשון אדומה ויבשה, הדופק מהיר ועמוק והחזה חם. <strong>קור אמיתי — חום מדומה</strong>: היאנג כה חלש שהוא "צף" למעלה — לחיים סמוקות בצבע ורדרד, צמא בלי רצון לשתות — אבל הלשון חיוורת ורטובה והדופק ריק. <strong>תמיד מכריעים לפי הלשון והדופק.</strong></p>
+<p>מצבים מעורבים שכיחים בקליניקה: עודף על רקע חסר (ליחה על חסר טחול), חום מלמעלה וקור מלמטה, חיצוני ופנימי יחד.</p>
+`},
+
+{ id:'qx', k:'שיעור 2', title:'צ׳י, דם ונוזלים', cn:'气血津液 · Qi Xue Jin Ye', body:`
+<p class="lead">אחרי שקבענו את הטבע והמיקום, השאלה הבאה היא <strong>איזה חומר</strong> נפגע. לכל חומר יש שני סוגי בעיות: <strong>חסר</strong> (אין מספיק) ו<strong>קיפאון</strong> (יש, אבל הוא לא זורם).</p>
+<table><thead><tr><th>חומר</th><th>חסר</th><th>קיפאון / עודף</th><th>כיוון שגוי</th></tr></thead><tbody>
+<tr><td><strong>צ׳י</strong></td><td>חסר צ׳י · שקיעת צ׳י</td><td>קיפאון צ׳י</td><td>צ׳י מורד</td></tr>
+<tr><td><strong>דם</strong></td><td>חסר דם</td><td>קיפאון דם</td><td>חום בדם (דם "בורח")</td></tr>
+<tr><td><strong>נוזלים</strong></td><td>חסר נוזלים · יובש</td><td>לחות · ליחה · בצקת</td><td></td></tr>
+</tbody></table>
+<h3>הקשרים שמכתיבים את הטיפול</h3>
+<ul>
+<li><strong>"הצ׳י הוא המפקד של הדם"</strong> — הצ׳י מייצר, מניע ומחזיק את הדם. חסר צ׳י מוביל לחסר דם, לקיפאון דם ולדימום.</li>
+<li><strong>"הדם הוא האם של הצ׳י"</strong> — הדם מזין את הצ׳י ומעגן אותו. אובדן דם מסיבי גורר את הצ׳י איתו.</li>
+<li><strong>"דם ונוזלים מאותו מקור"</strong> — מי שאיבד נוזלים (זיעה, שלשול) לא יקבל טיפול שמזיע; מי שאיבד דם — לא טיפול שמייבש.</li>
+</ul>
+<div class="box"><div class="box-t">לחות ← ליחה ← גושים</div>אותו תהליך בשלושה שלבים של עיבוי: לחות היא נוזלים שלא עובדו; ליחה היא לחות שהתעבתה; גושים הם ליחה שהתקשתה — לרוב יחד עם קיפאון דם.</div>
+`},
+
+{ id:'lu', k:'שיעור 3', title:'ריאות ומעי גס', cn:'肺 · 大肠 Fei · Da Chang', body:`
+<p class="lead">הריאות הן ה"חופה" של האיברים — הגבוהות ביותר, הקרובות ביותר לחוץ, והראשונות להיפגע מפתוגנים. הן "האיבר הרך" שאינו סובל קור, חום או יובש.</p>
+<h3>מה הריאות עושות</h3>
+<ul>
+<li>שולטות בצ׳י ובנשימה — קולטות את "צ׳י השמיים" ומשלבות אותו עם צ׳י המזון.</li>
+<li><strong>מפזרות ומורידות</strong> (宣发肃降) — מפזרות ווי צ׳י ונוזלים אל העור, ומורידות צ׳י ונוזלים לכליות.</li>
+<li>שולטות בעור ובנקבוביות — ולכן בהזעה ובהגנה.</li>
+<li>"נפתחות לאף" ומתבטאות בקול. הרגש שלהן — עצב וצער.</li>
+<li>המעי הגס, הזוג שלהן, ממשיך את תנועת הירידה — ולכן שיעול ועצירות קשורים לעתים קרובות.</li>
+</ul>
+<h3>מפת ההבחנה</h3>
+<table><thead><tr><th></th><th>חסר צ׳י</th><th>חסר יין</th><th>רוח-קור</th><th>רוח-חום</th><th>ליחה-חום</th><th>ליחה-לחות</th></tr></thead><tbody>
+<tr><td>שיעול</td><td>חלש</td><td>יבש</td><td>חזק</td><td>חזק</td><td>חזק</td><td>"רטוב"</td></tr>
+<tr><td>ליחה</td><td>מימית</td><td>מועטה</td><td>לבנה דלילה</td><td>צהובה מעט</td><td>צהובה סמיכה</td><td>לבנה מרובה</td></tr>
+<tr><td>משך</td><td>כרוני</td><td>כרוני</td><td>חד</td><td>חד</td><td>חד-בינוני</td><td>כרוני</td></tr>
+<tr><td>דופק</td><td>חלש</td><td>דק-מהיר</td><td>צף-מתוח</td><td>צף-מהיר</td><td>חלקלק-מהיר</td><td>חלקלק</td></tr>
+</tbody></table>
+`},
+
+{ id:'sp', k:'שיעור 4', title:'טחול וקיבה', cn:'脾 · 胃 Pi · Wei', body:`
+<p class="lead">"השורש של מה שנרכש אחרי הלידה." הטחול והקיבה הופכים מזון לצ׳י ולדם, ולכן כמעט כל מצב כרוני מגיע אליהם בסוף.</p>
+<h3>זוג הפוך</h3>
+<table><thead><tr><th>טחול 脾</th><th>קיבה 胃</th></tr></thead><tbody>
+<tr><td>יין — אוהב יובש, שונא לחות</td><td>יאנג — אוהבת לחות, שונאת יובש</td></tr>
+<tr><td>הצ׳י שלו <strong>עולה</strong> — מעלה את ה"צלול" ומחזיק איברים</td><td>הצ׳י שלה <strong>יורד</strong> — מורידה את המזון</td></tr>
+<tr><td>נוטה לחסר, לקור וללחות</td><td>נוטה לעודף, לחום וליובש</td></tr>
+<tr><td>בעיות: שלשול, נפיחות, עייפות, צניחה, דימום</td><td>בעיות: בחילה, גיהוק, צרבת, כאב באפיגסטריום</td></tr>
+</tbody></table>
+<p>הטחול שולט גם בשרירים ובגפיים, נפתח לפה ומתבטא בשפתיים. הרגש שלו — מחשבה ודאגה. "כשהטחול חלש, הלחות מתעוררת; כשהלחות מתעוררת, הטחול נחלש עוד" — מעגל שכדאי לזהות.</p>
+<div class="box"><div class="box-t">החמישה של הטחול</div>חסר צ׳י ← חסר יאנג (מוסיפים קור) ← שקיעת צ׳י (מוסיפים צניחה) ← אינו שולט בדם (מוסיפים דימום). ובנפרד — לחות שכולאת את הטחול, שהיא עודף ולא חסר.</div>
+`},
+
+{ id:'ht', k:'שיעור 5', title:'לב, מעי דק ופריקרד', cn:'心 · 小肠 · 心包 Xin', body:`
+<p class="lead">"הלב הוא הקיסר." הוא שולט בדם ובכלי הדם, ו<strong>מאכסן את השן</strong> (神) — התודעה, הנפש והשינה. לכן סינדרומי הלב הם כמעט תמיד שילוב של גוף ונפש.</p>
+<h3>שלושה צירים בסינדרומי הלב</h3>
+<ul>
+<li><strong>ציר ההנעה</strong> — חסר צ׳י ← חסר יאנג ← קריסת יאנג. דפיקות, קוצר נשימה, זיעה.</li>
+<li><strong>ציר העיגון</strong> — חסר דם ← חסר יין. השן אינה מעוגנת: שינה, חרדה, זיכרון.</li>
+<li><strong>ציר העודף</strong> — אש, ליחה-אש, ליחה, קיפאון דם. הלב "נחסם" או "נשרף".</li>
+</ul>
+<h3>שינה כמפתח</h3>
+<table><thead><tr><th>תבנית השינה</th><th>כיוון</th></tr></thead><tbody>
+<tr><td>קושי להירדם</td><td>חסר דם הלב</td></tr>
+<tr><td>התעוררות בלילה עם חום וזיעה</td><td>חסר יין הלב · הלב והכליות אינם מתקשרים</td></tr>
+<tr><td>שינה סוערת, חלומות אלימים</td><td>אש הלב או הכבד</td></tr>
+<tr><td>התעוררות מוקדמת ובהלה</td><td>חולשת כיס המרה ולב</td></tr>
+</tbody></table>
+<p>הפריקרד הוא "שומר הקיסר" — פתוגנים שתוקפים את הלב פוגעים בו קודם. בפועל, הנקודות שלו (PC6, PC7) הן מהכלים העיקריים בטיפול בלב.</p>
+`},
+
+{ id:'lr', k:'שיעור 6', title:'כבד וכיס מרה', cn:'肝 · 胆 Gan · Dan', body:`
+<p class="lead">"הכבד הוא הגנרל." הוא אחראי על <strong>הזרימה החופשית</strong> של הצ׳י (疏泄), ו<strong>מאכסן את הדם</strong>. כשהזרימה נעצרת — כל הגוף מרגיש.</p>
+<h3>מפת ההתקדמות של הכבד</h3>
+<p>רבים מסינדרומי הכבד הם שלבים באותו תהליך. לזהות היכן המטופל נמצא — זה חצי מהאבחנה:</p>
+<div class="flow">
+ <span>קיפאון צ׳י הכבד</span><i>←</i><span>הקיפאון הופך לאש</span><i>←</i><span>אש הכבד עולה</span><i>←</i><span>רוח פנימית</span>
+</div>
+<div class="flow">
+ <span>חסר דם הכבד</span><i>←</i><span>חסר יין הכבד</span><i>←</i><span>יאנג הכבד עולה</span><i>←</i><span>רוח פנימית</span>
+</div>
+<h3>אש מול יאנג עולה — ההבחנה החשובה</h3>
+<table><thead><tr><th></th><th>אש הכבד</th><th>יאנג הכבד עולה</th></tr></thead><tbody>
+<tr><td>טבע</td><td>עודף ממשי</td><td>חסר מתחת, עודף מעל</td></tr>
+<tr><td>צמא, טעם מר, עצירות</td><td>כן</td><td>בדרך כלל לא</td></tr>
+<tr><td>לשון</td><td>אדומה, ציפוי צהוב</td><td>אדומה בצדדים, לעתים ללא ציפוי</td></tr>
+<tr><td>דופק</td><td>מיתרי ומהיר</td><td>מיתרי ודק</td></tr>
+<tr><td>עיקרון</td><td>לנקז אש</td><td>להשקיט יאנג ולהזין יין</td></tr>
+</tbody></table>
+<p>הכבד נפתח לעיניים, שולט בגידים ומתבטא בציפורניים. הרגש שלו — כעס ותסכול.</p>
+`},
+
+{ id:'ki', k:'שיעור 7', title:'כליות ושלפוחית', cn:'肾 · 膀胱 Shen · Pang Guang', body:`
+<p class="lead">"שורש החיים שלפני הלידה." הכליות מאכסנות את ה<strong>ג׳ינג</strong>, והן המקור של היין והיאנג של כל הגוף. לכן כמעט אין עודף בכליות — רק חסר.</p>
+<h3>מה הכליות עושות</h3>
+<ul>
+<li>מאכסנות ג׳ינג — צמיחה, פוריות, הזדקנות.</li>
+<li>שולטות במים — "ההמרה" האחרונה של הנוזלים.</li>
+<li>קולטות את הצ׳י מהריאות.</li>
+<li>מייצרות מח — שממלא את המוח ואת העצמות.</li>
+<li>נפתחות לאוזניים, מתבטאות בשיער, שולטות בשני הפתחים התחתונים. הרגש שלהן — פחד.</li>
+</ul>
+<h3>יין או יאנג — שאלת המפתח</h3>
+<table><thead><tr><th></th><th>חסר יין הכליות</th><th>חסר יאנג הכליות</th></tr></thead><tbody>
+<tr><td>משותף</td><td colspan="2">גב תחתון וברכיים חלשים, טנטון, בעיות שתן ומיניות</td></tr>
+<tr><td>חום/קור</td><td>חום בערב, חמשת הלבבות</td><td>קור, גפיים קרות</td></tr>
+<tr><td>שתן</td><td>כהה ומועט</td><td>צלול ומרובה</td></tr>
+<tr><td>זיעה</td><td>בלילה</td><td>ביום</td></tr>
+<tr><td>לשון</td><td>אדומה, ללא ציפוי</td><td>חיוורת, רטובה</td></tr>
+<tr><td>דופק</td><td>דק ומהיר</td><td>עמוק וחלש</td></tr>
+</tbody></table>
+<p>בקליניקה רואים לעתים קרובות חסר של שניהם, עם נטייה לאחד. מטפלים בצד הבולט ותומכים בשני: "מי שמחזק יאנג — מחפש אותו בתוך היין".</p>
+`},
+
+{ id:'cb', k:'שיעור 8', title:'סינדרומים משולבים', cn:'脏腑兼证 · Jian Zheng', body:`
+<p class="lead">בקליניקה כמעט אין סינדרום "נקי". האיברים קשורים זה לזה במעגלי ההזנה והשליטה של חמשת המעברים, ובדרך שבה הם חולקים חומרים — ולכן חולשה באחד גוררת את השני.</p>
+<h3>שלושה סוגי קשרים</h3>
+<table><thead><tr><th>סוג</th><th>דוגמה</th><th>היגיון</th></tr></thead><tbody>
+<tr><td>אם ובן (הזנה)</td><td>טחול ← ריאות</td><td>האדמה מזינה את המתכת</td></tr>
+<tr><td>שליטה ופלישה</td><td>כבד ← טחול / קיבה</td><td>העץ "פולש" לאדמה</td></tr>
+<tr><td>חומר משותף</td><td>כבד ← כליות, לב ← טחול</td><td>דם, ג׳ינג ויין משותפים</td></tr>
+<tr><td>ציר מים-אש</td><td>לב ← כליות</td><td>המים מקררים את האש, האש מחממת את המים</td></tr>
+</tbody></table>
+<p>כלל אצבע לבחירת נקודות: לטפל בשני האיברים, ולשים את המשקל על זה שהתחיל.</p>
+`},
+
+{ id:'px', k:'שיעור 9', title:'ששת הגורמים הפתוגניים', cn:'六淫 · Liu Yin', body:`
+<p class="lead">רוח, קור, חום קיץ, לחות, יובש ואש — ששת "כוחות האקלים" שהופכים לפתוגן כשהם קיצוניים, כשהם מגיעים בעונה הלא נכונה, או כשהגוף חלש מכדי לעמוד בהם.</p>
+<table><thead><tr><th>פתוגן</th><th>טבע</th><th>תוקף בעיקר</th><th>עונה</th></tr></thead><tbody>
+<tr><td>רוח 风</td><td>יאנג, נודדת, עולה, משתנה</td><td>ראש, עור, ריאות</td><td>אביב</td></tr>
+<tr><td>קור 寒</td><td>יין, מכווץ, קופא</td><td>יאנג, מפרקים, בטן</td><td>חורף</td></tr>
+<tr><td>חום קיץ 暑</td><td>יאנג, עולה, מפזר</td><td>צ׳י ונוזלים</td><td>קיץ</td></tr>
+<tr><td>לחות 湿</td><td>יין, כבדה, דביקה, שוקעת</td><td>טחול, מפרקים</td><td>סוף קיץ</td></tr>
+<tr><td>יובש 燥</td><td>מייבש</td><td>ריאות, נוזלים</td><td>סתיו</td></tr>
+<tr><td>אש 火</td><td>יאנג קיצוני, שורף</td><td>דם, שן, נוזלים</td><td>—</td></tr>
+</tbody></table>
+<div class="box"><div class="box-t">פתוגן חיצוני ופנימי</div>לכל פתוגן חיצוני יש "תאום" פנימי: רוח פנימית מהכבד, קור מחסר יאנג, לחות מחסר טחול, יובש מחסר יין, אש מרגש. התסמינים דומים — המקור שונה, ולכן גם הטיפול.</div>
+`},
+
+{ id:'lj', k:'שיעור 10', title:'ששת השלבים', cn:'六经辨证 · Shang Han Lun', body:`
+<p class="lead">שיטה של ג׳אנג ג׳ונג-ג׳ינג מהמאה ה-3 לספירה, ב"מסה על פגיעת קור" (伤寒论). היא מתארת איך מחלה חיצונית נכנסת לגוף שכבה אחר שכבה — משלוש שכבות יאנג חיצוניות לשלוש שכבות יין פנימיות.</p>
+<div class="flow">
+ <span>טאי-יאנג</span><i>←</i><span>יאנג-מינג</span><i>←</i><span>שאו-יאנג</span><i>←</i><span>טאי-יין</span><i>←</i><span>שאו-יין</span><i>←</i><span>ג׳ואה-יין</span>
+</div>
+<table><thead><tr><th>שלב</th><th>מיקום</th><th>מאבק</th><th>מילת מפתח</th></tr></thead><tbody>
+<tr><td>טאי-יאנג</td><td>פני השטח</td><td>עודף</td><td>רתיעה מקור, עורף נוקשה, דופק צף</td></tr>
+<tr><td>יאנג-מינג</td><td>קיבה ומעיים</td><td>עודף, חום</td><td>"ארבעת הגדולים", או עצירות וחום אחר הצהריים</td></tr>
+<tr><td>שאו-יאנג</td><td>"הציר"</td><td>מעורב</td><td>חילופי חום וקור, טעם מר, דופק מיתרי</td></tr>
+<tr><td>טאי-יין</td><td>טחול</td><td>חסר, קור</td><td>שלשול, אין צמא</td></tr>
+<tr><td>שאו-יין</td><td>לב וכליות</td><td>חסר עמוק</td><td>"רק רוצה לישון", דופק דק וחלש</td></tr>
+<tr><td>ג׳ואה-יין</td><td>כבד ופריקרד</td><td>מעורב קיצוני</td><td>חום מלמעלה, קור מלמטה</td></tr>
+</tbody></table>
+<p>השיטה אינה רק היסטורית: הפורמולות של שאנג האן לון — Gui Zhi Tang, Xiao Chai Hu Tang, Li Zhong Wan — הן בסיס של הצמחייה הסינית עד היום.</p>
+`},
+
+{ id:'wq', k:'שיעור 11', title:'ארבע הרמות', cn:'卫气营血 · Wei Qi Ying Xue', body:`
+<p class="lead">שיטה של יה טיאן-שי (המאה ה-18), מבית הספר של מחלות החום (温病). היא נבנתה בדיוק לשם מה שששת השלבים לא מסבירים היטב: מחלות שמתחילות כחום, מתקדמות מהר, ופוגעות ביין ובדם.</p>
+<div class="flow">
+ <span>ווי</span><i>←</i><span>צ׳י</span><i>←</i><span>יינג</span><i>←</i><span>שואה (דם)</span>
+</div>
+<table><thead><tr><th>רמה</th><th>סימן המעבר</th><th>לשון</th></tr></thead><tbody>
+<tr><td>ווי — שכבת ההגנה</td><td>רתיעה קלה מקור עם חום</td><td>קצה אדום, ציפוי דק</td></tr>
+<tr><td>צ׳י — האיברים</td><td>הרתיעה מקור נעלמה; חום גבוה וצמא</td><td>אדומה, ציפוי צהוב</td></tr>
+<tr><td>יינג — השכבה המזינה</td><td>חום שמחמיר בלילה, אי-שקט, פריחה מתחילה</td><td><strong>ארגמנית</strong>, ללא ציפוי</td></tr>
+<tr><td>שואה — הדם</td><td>דימום, פריחה כהה, פרכוסים</td><td>ארגמנית כהה, סגולה</td></tr>
+</tbody></table>
+<div class="box"><div class="box-t">המשפט שמכוון את הטיפול</div>"ברמת הווי — להזיע. ברמת הצ׳י — לנקות. ברמת היינג — להעביר את החום חזרה לצ׳י. ברמת הדם — לקרר את הדם ולהניע אותו." — יה טיאן-שי</div>
+`},
+
+{ id:'sj', k:'שיעור 12', title:'שלושת המחממים', cn:'三焦辨证 · San Jiao', body:`
+<p class="lead">שיטה של וו ג׳וּ-טונג (1798). היא מסדרת את מחלות החום לפי <strong>גובה</strong> בגוף ולא לפי עומק — ומתאימה במיוחד למחלות לחות-חום, שנעות לאט מלמעלה למטה.</p>
+<table><thead><tr><th>מחמם</th><th>איברים</th><th>שלב המחלה</th></tr></thead><tbody>
+<tr><td>עליון 上焦</td><td>ריאות, לב ופריקרד</td><td>התחלה</td></tr>
+<tr><td>אמצעי 中焦</td><td>טחול, קיבה, מעיים</td><td>אמצע — חום-יובש או לחות-חום</td></tr>
+<tr><td>תחתון 下焦</td><td>כבד, כליות</td><td>סוף — חסר יין ורוח</td></tr>
+</tbody></table>
+<p>"המחמם העליון כמו נוצה — רק קל יכול להגיע אליו. המחמם האמצעי כמו מאזניים — רק מאוזן יחזיק אותו. המחמם התחתון כמו משקולת — רק כבד יכול לשקוע אליו." זו הנחיה ישירה לבחירת צמחים: קלים וארומטיים למעלה, כבדים ומזינים למטה.</p>
+<h3>השוואה בין שלוש שיטות המחלות החיצוניות</h3>
+<table><thead><tr><th></th><th>ששת השלבים</th><th>ארבע הרמות</th><th>שלושת המחממים</th></tr></thead><tbody>
+<tr><td>פתוגן עיקרי</td><td>קור</td><td>חום</td><td>חום ולחות-חום</td></tr>
+<tr><td>ציר</td><td>עומק — יאנג ליין</td><td>עומק — ווי לדם</td><td>גובה — למעלה למטה</td></tr>
+<tr><td>נפגע ראשון</td><td>יאנג</td><td>יין ונוזלים</td><td>ריאות</td></tr>
+</tbody></table>
+`},
+
+{ id:'calc', k:'כלי', title:'מחשבון אבחנה מבדלת', cn:'辨证助手', body:`
+<p class="lead">סמנו את מה שמצאתם אצל המטופל — סימנים, לשון ודופק. המחשבון מדרג את הסינדרומים בקורס לפי מידת ההתאמה, ומראה מה עוד כדאי לבדוק כדי להכריע.</p>
+<div class="box warn calc-print-note"><div class="box-t">בגרסה המודפסת</div>המחשבון הוא כלי אינטראקטיבי וזמין בגרסת הדפדפן של הקורס.</div>
+<div id="calcBox"></div>
+`},
+
+{ id:'cmp', k:'נספח א', title:'טבלאות אבחנה מבדלת', cn:'鉴别', body:`
+<p class="lead">הצמדים שהכי קל לבלבל ביניהם — והסימן שמכריע.</p>
+<table><thead><tr><th>צמד</th><th>משותף</th><th>הסימן המכריע</th></tr></thead><tbody>
+<tr><td>חסר צ׳י ↔ חסר יאנג</td><td>עייפות, חולשה, דופק חלש</td><td>קור וגפיים קרות = יאנג</td></tr>
+<tr><td>חסר דם ↔ חסר יין</td><td>סחרחורת, שינה גרועה, דופק דק</td><td>חום ריק (הזעת לילה, חמשת הלבבות), לשון אדומה ללא ציפוי = יין. לשון חיוורת = דם</td></tr>
+<tr><td>קיפאון צ׳י ↔ קיפאון דם</td><td>כאב</td><td>כאב נודד ומשתנה עם הרגש = צ׳י. כאב קבוע, דוקר, לילי, לשון סגולה = דם</td></tr>
+<tr><td>לחות ↔ ליחה</td><td>כבדות, ציפוי עבה, דופק חלקלק</td><td>ליחה נראית, גושים, ערפול מחשבתי = ליחה</td></tr>
+<tr><td>חסר יאנג הטחול ↔ קור-לחות כולאת את הטחול</td><td>שלשול, קור, לחות</td><td>ציפוי עבה וחסר בולט של חולשה = עודף (קור-לחות). חולשה עמוקה וציפוי דק = חסר</td></tr>
+<tr><td>יאנג הכבד עולה ↔ אש הכבד</td><td>כאב ראש, עצבנות, אדמומיות</td><td>צמא, טעם מר, עצירות, ציפוי צהוב = אש</td></tr>
+<tr><td>חסר דם הלב ↔ חסר יין הלב</td><td>דפיקות, נדודי שינה</td><td>קושי להירדם = דם. התעוררות עם חום = יין</td></tr>
+<tr><td>חסר צ׳י הריאות ↔ הכליות אינן קולטות</td><td>קוצר נשימה במאמץ</td><td>קושי בשאיפה + גב תחתון = כליות</td></tr>
+<tr><td>רוח-קור ↔ רוח-חום</td><td>חיצוני, דופק צף</td><td>כאב גרון, צמא, דופק מהיר = חום. אין זיעה, דופק מתוח = קור</td></tr>
+<tr><td>טאי-יאנג פגיעת רוח ↔ פגיעת קור</td><td>רתיעה מקור, דופק צף</td><td>הזעה = רוח. אין הזעה = קור</td></tr>
+<tr><td>רמת הצ׳י ↔ רמת היינג</td><td>חום גבוה</td><td>לשון ארגמנית, חום שמחמיר בלילה, צמא מועט = יינג</td></tr>
+</tbody></table>
+<h3>לשון — מפתח מהיר</h3>
+<table><thead><tr><th>מה רואים</th><th>מה זה אומר</th></tr></thead><tbody>
+<tr><td>חיוורת</td><td>חסר צ׳י, דם או יאנג</td></tr>
+<tr><td>חיוורת ורטובה ונפוחה</td><td>חסר יאנג עם הצטברות נוזלים</td></tr>
+<tr><td>אדומה עם ציפוי</td><td>חום-עודף</td></tr>
+<tr><td>אדומה ללא ציפוי</td><td>חסר יין</td></tr>
+<tr><td>ארגמנית</td><td>חום ברמת היינג/הדם, או חסר יין קיצוני</td></tr>
+<tr><td>סגולה</td><td>קיפאון דם (סגול-כחלחל = קור, סגול-אדמדם = חום)</td></tr>
+<tr><td>קצה אדום</td><td>חום בלב (או בריאות — בחלק הקדמי)</td></tr>
+<tr><td>צדדים אדומים</td><td>חום בכבד ובכיס המרה</td></tr>
+<tr><td>ציפוי עבה</td><td>עודף — לחות, ליחה, מזון</td></tr>
+</tbody></table>
+<h3>דופק — מפתח מהיר</h3>
+<table><thead><tr><th>דופק</th><th>מה זה אומר</th></tr></thead><tbody>
+<tr><td>צף</td><td>חיצוני (או חסר יין קיצוני — צף וריק)</td></tr>
+<tr><td>עמוק</td><td>פנימי</td></tr>
+<tr><td>איטי / מהיר</td><td>קור / חום</td></tr>
+<tr><td>חלש וריק</td><td>חסר צ׳י</td></tr>
+<tr><td>דק</td><td>חסר דם או יין</td></tr>
+<tr><td>מיתרי</td><td>כבד, כאב, קיפאון צ׳י</td></tr>
+<tr><td>חלקלק</td><td>לחות, ליחה, מזון — או הריון</td></tr>
+<tr><td>מחוספס</td><td>קיפאון דם או חסר דם</td></tr>
+<tr><td>מתוח</td><td>קור, כאב</td></tr>
+<tr><td>רך</td><td>לחות על רקע חסר</td></tr>
+</tbody></table>
+`},
+
+{ id:'pts', k:'נספח ב', title:'מפתח הנקודות', cn:'腧穴', body:`
+<p class="lead">כל הנקודות שמופיעות בקורס, בקוד WHO, בשם פיניין ובמיקום לפי צון. ליד כל נקודה — הסינדרומים שבהם היא מופיעה.</p>
+<div id="ptsTable"></div>
+`},
+
+{ id:'tz', k:'נספח ג', title:'שיוך לפורמולות טיזון', cn:'Tizon Index', body:`
+<p class="lead">שיוך הסינדרומים לפורמולות של טיזון. השיוך מגיע אך ורק מאינדקס הפורמולות של טיזון — לא מהסקה ולא מהפורמולה הקלאסית.</p>
+<div id="tzStatus"></div>
+<div id="tzTable"></div>
+`}
+];
+
+/* ================= RENDER ================= */
+const LESSON_OF = {}; LESSONS.forEach(L => LESSON_OF[L.id] = L);
+const SYN_BY = {}; SYN.forEach(s => SYN_BY[s.id] = s);
+const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function feats(s){
+  return s.f.split(/\s+/).filter(Boolean).map(x => ({ id:x.replace('!',''), key:x[0]==='!' }));
+}
+function ptChip(code){
+  const p = PTS[code]; if(!p) return '<span class="pt">'+esc(code)+'</span>';
+  return '<button type="button" class="pt" data-pt="'+esc(code)+'" title="'+esc(p[0]+' — '+p[1])+'"><b>'+esc(code)+'</b> '+esc(p[0])+'</button>';
+}
+function tizonSlot(s){
+  const tz = TIZON[s.id];
+  if(tz && tz.length) return '<div class="tz-slot ok"><span class="lbl">פורמולת טיזון</span>'+tz.map(esc).join(' · ')+'</div>';
+  return '<div class="tz-slot"><span class="lbl">פורמולת טיזון</span><span class="pend">ממתין לשיוך מהאינדקס</span></div>';
+}
+function card(s){
+  const fs = feats(s);
+  const signs = fs.filter(x => !/^[TP]_/.test(x.id))
+    .sort((a,b) => b.key - a.key)
+    .map(x => '<li'+(x.key?' class="key"':'')+'>'+esc(F[x.id][1])+'</li>').join('')
+    + (s.more||[]).map(m => '<li class="more">'+esc(m)+'</li>').join('');
+  return '<article class="syn'+(s.red?' red':'')+'" id="s-'+s.id+'">'
+   + '<header class="syn-h"><div><h4>'+esc(s.he)+'</h4><div class="syn-py">'+esc(s.py)+'</div></div><div class="syn-zh" lang="zh">'+esc(s.zh)+'</div></header>'
+   + (s.red?'<div class="redline"><span class="redtag">דגל אדום</span> מצב שמחייב הערכה רפואית</div>':'')
+   + '<div class="syn-body">'
+   +   '<div class="signs"><div class="lbl">סימנים</div><ul>'+signs+'</ul></div>'
+   +   '<div class="tp-grid"><div class="tp-cell"><div class="lbl">לשון</div>'+esc(s.t)+'</div><div class="tp-cell"><div class="lbl">דופק</div>'+esc(s.p)+'</div></div>'
+   + '</div>'
+   + '<dl class="syn-dl">'
+   +   '<dt>אטיולוגיה</dt><dd>'+esc(s.et)+'</dd>'
+   +   '<dt>פתוגנזה</dt><dd>'+esc(s.pg)+'</dd>'
+   +   '<dt>עקרון טיפול</dt><dd class="tp-line">'+esc(s.tp)+'</dd>'
+   +   (s.pts.length?'<dt>נקודות</dt><dd class="pts">'+s.pts.map(ptChip).join('')+'</dd>':'')
+   +   (s.cf?'<dt>פורמולה קלאסית</dt><dd class="cf">'+esc(s.cf)+'</dd>':'')
+   + '</dl>'
+   + tizonSlot(s)
+   + (s.note?'<div class="pearl'+(s.red?' warn':'')+'">'+esc(s.note)+'</div>':'')
+   + '</article>';
+}
+
+function renderLessons(){
+  const content = document.getElementById('content');
+  const nav = document.getElementById('nav');
+  content.innerHTML = LESSONS.map(L => {
+    const list = SYN.filter(s => s.l === L.id);
+    const jump = list.length ? '<div class="jump"><span class="lbl">'+list.length+' סינדרומים</span>'+list.map(s => '<a href="#s-'+s.id+'" data-jump="'+s.id+'">'+esc(s.he)+'</a>').join('')+'</div>' : '';
+    return '<section class="lesson" id="'+L.id+'" data-title="'+esc(L.title)+'">'
+      + '<div class="lesson-head"><div class="kicker">'+esc(L.k)+'</div><h2>'+esc(L.title)+' <span class="cn">'+esc(L.cn)+'</span></h2></div>'
+      + L.body + jump
+      + (list.length ? '<h3>הסינדרומים</h3><div class="syns">'+list.map(card).join('')+'</div>' : '')
+      + navFoot(L.id)
+      + '</section>';
+  }).join('');
+  nav.innerHTML = LESSONS.map((L,i) =>
+    '<button type="button" class="nav-btn" data-go="'+L.id+'"><span class="num">'+navNum(L)+'</span><span class="nl">'+esc(L.title)+'</span></button>'
+  ).join('');
+}
+function navNum(L){
+  if(L.k.indexOf('שיעור')===0) return L.k.replace('שיעור ','');
+  if(L.k==='פתיחה') return '0';
+  if(L.k==='כלי') return '◎';
+  return L.k.slice(-1);
+}
+function navFoot(id){
+  const i = LESSONS.findIndex(L => L.id === id), p = LESSONS[i-1], n = LESSONS[i+1];
+  return '<div class="lesson-foot">'
+    + (p?'<button type="button" class="lf prev" data-go="'+p.id+'">→ '+esc(p.title)+'</button>':'<span></span>')
+    + (n?'<button type="button" class="lf next" data-go="'+n.id+'">'+esc(n.title)+' ←</button>':'<span></span>')
+    + '</div>';
+}
+
+function go(id, anchor){
+  document.querySelectorAll('.lesson').forEach(s => s.classList.toggle('active', s.id === id));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.go === id));
+  document.getElementById('sidebar').classList.remove('open');
+  const t = anchor ? document.getElementById(anchor) : document.getElementById('content');
+  if(t) window.scrollTo({ top: Math.max(0, t.getBoundingClientRect().top + window.scrollY - (anchor?16:0)), behavior: anchor?'smooth':'auto' });
+  try{ history.replaceState(null,'','#'+(anchor||id)); }catch(e){}
+}
+function toggleSide(){ document.getElementById('sidebar').classList.toggle('open'); }
+
+/* ================= POINT POPOVER ================= */
+function showPt(btn){
+  const code = btn.dataset.pt, p = PTS[code]; if(!p) return;
+  let pop = document.getElementById('ptpop');
+  if(!pop){ pop = document.createElement('div'); pop.id='ptpop'; pop.className='ptpop'; document.body.appendChild(pop); }
+  const uses = SYN.filter(s => s.pts.includes(code)).length;
+  pop.innerHTML = '<div class="pp-h"><b>'+esc(code)+'</b> '+esc(p[0])+'</div><div>'+esc(p[1])+'</div><div class="pp-u">מופיעה ב-'+uses+' סינדרומים</div>';
+  const r = btn.getBoundingClientRect();
+  pop.style.display='block';
+  const w = pop.offsetWidth;
+  pop.style.top = (r.bottom + window.scrollY + 6) + 'px';
+  pop.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width/2 - w/2)) + 'px';
+}
+document.addEventListener('click', e => {
+  const pt = e.target.closest('.pt[data-pt]');
+  const pop = document.getElementById('ptpop');
+  if(pt){ e.preventDefault(); showPt(pt); return; }
+  if(pop && !e.target.closest('#ptpop')) pop.style.display='none';
+  const g = e.target.closest('[data-go]'); if(g){ go(g.dataset.go); return; }
+  const j = e.target.closest('[data-jump]'); if(j){ e.preventDefault(); const s = SYN_BY[j.dataset.jump]; go(s.l, 's-'+s.id); return; }
+});
+
+/* ================= POINTS TABLE + TIZON TABLE ================= */
+function renderAppendices(){
+  const order = ['LU','LI','ST','SP','HT','SI','BL','KI','PC','TE','GB','LR','CV','GV','EX'];
+  const codes = Object.keys(PTS).sort((a,b) => {
+    const ca = a.replace(/[-\d].*$/,''), cb = b.replace(/[-\d].*$/,'');
+    return order.indexOf(ca)-order.indexOf(cb) || (parseInt(a.replace(/\D/g,''))-parseInt(b.replace(/\D/g,'')));
+  });
+  document.getElementById('ptsTable').innerHTML =
+    '<table class="ptab"><thead><tr><th>קוד</th><th>שם</th><th>מיקום</th><th>בסינדרומים</th></tr></thead><tbody>'
+    + codes.map(c => {
+        const uses = SYN.filter(s => s.pts.includes(c));
+        return '<tr id="pt-'+c+'"><td class="mono"><b>'+c+'</b></td><td>'+esc(PTS[c][0])+'</td><td>'+esc(PTS[c][1])+'</td><td class="uses">'
+          + uses.map(s => '<a href="#s-'+s.id+'" data-jump="'+s.id+'">'+esc(s.he)+'</a>').join('، ') + '</td></tr>';
+      }).join('')
+    + '</tbody></table>';
+
+  const done = SYN.filter(s => TIZON[s.id] && TIZON[s.id].length).length;
+  document.getElementById('tzStatus').innerHTML = done
+    ? '<div class="box"><div class="box-t">מצב השיוך</div>'+done+' מתוך '+SYN.length+' סינדרומים משויכים.</div>'
+    : '<div class="box warn"><div class="box-t">ממתין לאינדקס</div>אף סינדרום עדיין לא שויך. השיוך יושלם מאינדקס הפורמולות של טיזון — '+SYN.length+' סינדרומים בטבלה.</div>';
+  document.getElementById('tzTable').innerHTML =
+    '<table><thead><tr><th>שיעור</th><th>סינדרום</th><th>עקרון טיפול</th><th>פורמולת טיזון</th></tr></thead><tbody>'
+    + SYN.map(s => '<tr><td>'+esc(LESSON_OF[s.l].title)+'</td><td><a href="#s-'+s.id+'" data-jump="'+s.id+'">'+esc(s.he)+'</a></td><td>'+esc(s.tp)+'</td><td>'
+      + (TIZON[s.id] && TIZON[s.id].length ? esc(TIZON[s.id].join(' · ')) : '<span class="pend">—</span>') + '</td></tr>').join('')
+    + '</tbody></table>';
+}
+
+/* ================= DIAGNOSTIC CALCULATOR ================= */
+const CONTRA = [
+  ['T_pale','T_red','T_deep_red'], ['P_slow','P_rapid'], ['P_floating','P_deep'], ['P_weak','P_full'],
+  ['thirst','great_thirst','no_thirst'], ['T_wet','T_dry'], ['T_nocoat','T_thick_white','T_yellow_greasy','T_yellow'],
+  ['constipation','loose_stool'], ['sp_sweat','no_sweat'], ['clear_urine','dark_urine'], ['cold_aversion','heat_aversion'],
+  ['cold_limbs','five_palm']
+];
+const SEL = new Set();
+const SYSTEMS = [
+  ['all','הכל'], ['in','מחלות פנימיות'], ['ex','מחלות חיצוניות וחום']
+];
+let SYS = 'all';
+const EXT = new Set(['px','lj','wq','sj']);
+
+function renderCalc(){
+  const box = document.getElementById('calcBox');
+  box.innerHTML =
+    '<div class="calc">'
+    + '<div class="calc-in">'
+    +   '<div class="calc-bar"><div class="seg">'+SYSTEMS.map(s => '<button type="button" data-sys="'+s[0]+'"'+(s[0]===SYS?' class="on"':'')+'>'+s[1]+'</button>').join('')+'</div>'
+    +   '<button type="button" class="clr" id="calcClear">ניקוי</button></div>'
+    +   '<input type="search" id="calcFind" class="calc-find" placeholder="חיפוש סימן…" autocomplete="off">'
+    +   FGROUPS.map(g => {
+          const ids = Object.keys(F).filter(k => F[k][0] === g[0]);
+          return '<fieldset class="fg" data-g="'+g[0]+'"><legend>'+g[1]+'</legend><div class="chips">'
+            + ids.map(k => '<button type="button" class="chip-f" data-f="'+k+'" aria-pressed="false">'+esc(F[k][1])+'</button>').join('')
+            + '</div></fieldset>';
+        }).join('')
+    + '</div>'
+    + '<aside class="calc-out" id="calcOut"></aside>'
+    + '</div>';
+  box.addEventListener('click', e => {
+    const c = e.target.closest('.chip-f');
+    if(c){ const k=c.dataset.f; SEL.has(k)?SEL.delete(k):SEL.add(k); c.classList.toggle('on'); c.setAttribute('aria-pressed', SEL.has(k)); score(); return; }
+    const s = e.target.closest('[data-sys]');
+    if(s){ SYS = s.dataset.sys; box.querySelectorAll('[data-sys]').forEach(b => b.classList.toggle('on', b===s)); score(); return; }
+    if(e.target.id === 'calcClear'){ SEL.clear(); box.querySelectorAll('.chip-f.on').forEach(b => { b.classList.remove('on'); b.setAttribute('aria-pressed','false'); }); score(); }
+  });
+  document.getElementById('calcFind').addEventListener('input', e => {
+    const q = e.target.value.trim();
+    box.querySelectorAll('.chip-f').forEach(b => b.style.display = (!q || b.textContent.includes(q)) ? '' : 'none');
+    box.querySelectorAll('.fg').forEach(f => f.style.display = [...f.querySelectorAll('.chip-f')].some(b => b.style.display !== 'none') ? '' : 'none');
+  });
+  score();
+}
+
+function score(){
+  const out = document.getElementById('calcOut');
+  if(!SEL.size){
+    out.innerHTML = '<div class="co-empty"><div class="co-big">0</div>סימנים נבחרו<p>התחילו בלשון ובדופק — הם מצמצמים את האפשרויות הכי מהר.</p></div>';
+    return;
+  }
+  const rows = SYN.filter(s => SYS==='all' || (SYS==='ex') === EXT.has(s.l)).map(s => {
+    const fs = feats(s), have = new Set(fs.map(x => x.id));
+    let tot = 0, hit = 0; const matched = [], missing = [];
+    fs.forEach(x => { const w = x.key?2:1; tot += w; if(SEL.has(x.id)){ hit += w; matched.push(x); } else if(x.key) missing.push(x); });
+    let conflict = [];
+    CONTRA.forEach(grp => {
+      const mine = grp.filter(g => have.has(g));
+      if(!mine.length) return;
+      grp.forEach(g => { if(SEL.has(g) && !have.has(g)) conflict.push(g); });
+    });
+    const adj = Math.max(0, hit - conflict.length*1.5);
+    const cov = adj / tot, prec = Math.max(0, matched.length - conflict.length) / SEL.size;
+    return { s, sc: Math.sqrt(cov * prec), matched, missing, conflict };
+  }).filter(r => r.matched.length).sort((a,b) => b.sc - a.sc).slice(0, 6);
+
+  if(!rows.length){ out.innerHTML = '<div class="co-empty"><div class="co-big">'+SEL.size+'</div>סימנים נבחרו<p>אין עדיין סינדרום שמתאים. הוסיפו לשון ודופק.</p></div>'; return; }
+  out.innerHTML = '<div class="co-head">'+SEL.size+' סימנים · '+rows.length+' אפשרויות מובילות</div>'
+    + rows.map((r,i) => {
+      const pct = Math.round(100 * r.sc);
+      return '<div class="co-row'+(i===0?' first':'')+'">'
+        + '<div class="co-t"><a href="#s-'+r.s.id+'" data-jump="'+r.s.id+'">'+esc(r.s.he)+'</a><span class="co-pct">'+pct+'%</span></div>'
+        + '<div class="co-meter"><i style="width:'+pct+'%"></i></div>'
+        + '<div class="co-sub">'+esc(LESSON_OF[r.s.l].title)+' · '+esc(r.s.py)+'</div>'
+        + (r.missing.length?'<div class="co-miss"><span>לבדוק:</span> '+r.missing.slice(0,4).map(x => esc(F[x.id][1])).join(' · ')+'</div>':'')
+        + (r.conflict.length?'<div class="co-con"><span>סותר:</span> '+r.conflict.map(x => esc(F[x][1])).join(' · ')+'</div>':'')
+        + '</div>';
+    }).join('')
+    + '<p class="co-foot">ההתאמה היא כלי עזר לחשיבה, לא אבחנה. סימני המפתח שלא סומנו הם הסימנים שכדאי לשאול עליהם עכשיו.</p>';
+}
+
+/* ================= BOOT ================= */
+renderLessons();
+renderAppendices();
+renderCalc();
+(function(){
+  const h = decodeURIComponent((location.hash||'').slice(1));
+  if(h && h.indexOf('s-')===0 && SYN_BY[h.slice(2)]) go(SYN_BY[h.slice(2)].l, h);
+  else if(h && LESSON_OF[h]) go(h);
+  else go(LESSONS[0].id);
+})();
+
+/* ================= COPY PROTECTION (deterrent) ================= */
+(function(){
+  function inField(t){return t&&(t.tagName==='INPUT'||t.tagName==='TEXTAREA');}
+  document.addEventListener('contextmenu',function(e){if(!inField(e.target))e.preventDefault();});
+  document.addEventListener('copy',function(e){if(!inField(e.target))e.preventDefault();});
+  document.addEventListener('cut',function(e){if(!inField(e.target))e.preventDefault();});
+  document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName==='IMG')e.preventDefault();});
+  document.addEventListener('selectstart',function(e){if(!inField(e.target))e.preventDefault();});
+  document.addEventListener('keydown',function(e){
+    var k=(e.key||'').toLowerCase();
+    if(e.key==='F12'){e.preventDefault();return;}
+    if(e.ctrlKey&&e.shiftKey&&(k==='i'||k==='j'||k==='c')){e.preventDefault();return;}
+    if(e.ctrlKey&&!e.shiftKey&&(k==='u'||k==='s')){e.preventDefault();return;}
+  });
+})();
+
+</script>
+<div class="tz-print"><button type="button" onclick="window.print()" aria-label="הדפסה או שמירה כ-PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>הדפסה / PDF</button></div>
+<script>window.__TZ_TOC__={"mountAfter": "header.tz-hero", "item": ".lesson", "title_sel": "h2", "nav": "#nav > *", "sub": "h3", "note": "{n} יחידות", "printOnly": true};</script>
+<script src="../assets/toc.js" defer></script>
+</body>
+</html>
